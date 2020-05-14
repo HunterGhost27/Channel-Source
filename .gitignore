@@ -116,4 +116,8 @@ ehthumbs.db
 Thumbs.db
 *.lnk
 
+#   ######################
+#       HUNTER-GHOST-27
+#   ######################
 
+.markdownlint.json
