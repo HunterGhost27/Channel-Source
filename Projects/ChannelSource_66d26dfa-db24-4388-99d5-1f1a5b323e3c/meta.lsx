@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="4" build="1" />
+    <region id="MetaData">
+        <node id="root">
+            <attribute id="Module" value="66d26dfa-db24-4388-99d5-1f1a5b323e3c" type="23" />
+            <attribute id="Name" value="ChannelSource" type="23" />
+            <attribute id="Type" value="Add-on" type="23" />
+            <attribute id="UUID" value="21672cf3-98f9-4dbc-a490-2eed8a649d8e" type="23" />
+        </node>
+    </region>
+</save>

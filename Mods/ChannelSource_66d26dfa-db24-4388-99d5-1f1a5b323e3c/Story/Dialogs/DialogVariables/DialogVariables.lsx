@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="6" build="0" />
+    <region id="DialogVariables">
+        <node id="root">
+            <children>
+                <node id="DialogVariable">
+                    <attribute id="DefaultValue" value="1.0.0.0" type="23" />
+                    <attribute id="Description" value="Channel Source Mod Version" type="23" />
+                    <attribute id="UUID" value="d30774ed-d944-4296-8b64-e8bca65acb23" type="31" />
+                    <attribute id="name" value="CSModID" type="22" />
+                    <attribute id="type" value="FixedString" type="23" />
+                </node>
+                <node id="DialogVariable">
+                    <attribute id="DefaultValue" value="Disabled" type="23" />
+                    <attribute id="Description" value="Tells whether DUBA is Enabled/Disabled." type="23" />
+                    <attribute id="UUID" value="a2da2866-73d9-4907-95d6-35f262321ca3" type="31" />
+                    <attribute id="name" value="DUBAFix" type="22" />
+                    <attribute id="type" value="FixedString" type="23" />
+                </node>
+                <node id="DialogVariable">
+                    <attribute id="DefaultValue" value="Existing-Save" type="23" />
+                    <attribute id="Description" value="The game-state the mod was installed on" type="23" />
+                    <attribute id="UUID" value="cb99b60e-de2b-47f7-acd0-9a4ce882a388" type="31" />
+                    <attribute id="name" value="InstalledOn" type="22" />
+                    <attribute id="type" value="FixedString" type="23" />
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

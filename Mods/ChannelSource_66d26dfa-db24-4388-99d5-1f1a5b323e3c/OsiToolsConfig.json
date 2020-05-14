@@ -1,0 +1,8 @@
+{
+    "RequiredExtensionVersion": 44,
+    "ModTable": "S7_ChannelSource",
+    "FeatureFlags": [
+        "OsirisExtensions",
+        "Preprocessor"
+    ]
+}

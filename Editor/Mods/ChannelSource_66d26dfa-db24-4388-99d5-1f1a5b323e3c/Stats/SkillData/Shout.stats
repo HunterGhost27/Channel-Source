@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="9fd4ac7a-fad7-424f-83df-0893eae93c38">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChannelSource_I" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_I,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source&lt;/font&gt; around you." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore 1 Source-Point." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChannelSource_II" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_II,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Greater" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source &lt;/font&gt;with greater effect." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Air_Lightning_Shout_01:Dummy_Root:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore 2 Source-Points." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChannelSource_III" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_III,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Master" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source&lt;/font&gt; like a true Godwoken." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Root_01,KeepRot:Dummy_Root;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Hand_02:Dummy_R_HandFX:hand01;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Cast_01:Dummy_Root:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_BodyFX_Cast_01:Dummy_BodyFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Hand01_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Self_Earth_HandFX_Hand01_01:Dummy_L_HandFX,Dummy_R_HandFX:hand01" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore 3 Source-Points." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="ChannelSource_IV" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_III,100,0;BLESSED,100,3;Bless" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Ally" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Divine" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You bless the &lt;font color='#008080'&gt;Source &lt;/font&gt;down in Rivellon." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Root_01,KeepRot:Dummy_Root;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Cast_01:Dummy_Root:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_BodyFX_Cast_01:Dummy_BodyFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Hand01_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Self_Earth_HandFX_Hand01_01:Dummy_L_HandFX,Dummy_R_HandFX:hand01;RS3_FX_Skills_Divine_MassBless_Impact_01:root:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillTier" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="Bless" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore 3 Source-Points." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="S7_CS_ChannelSource_I" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="2" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_I,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source&lt;/font&gt; around you. Gain 1 Source-Point." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="2" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore 1 Source Point." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="S7_CS_ChannelSource_II" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="3" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_II,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Greater" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source &lt;/font&gt;with greater effect. Gain 2 Source-Points." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Air_Lightning_Shout_01:Dummy_Root:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="3" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore: 2 Source-Points." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="S7_CS_ChannelSource_III" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="1" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_III,100,0" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Self" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Master" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You Channel the &lt;font color='#008080'&gt;Source&lt;/font&gt; like a true Godwoken. Gain 3 Source-Points." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Root_01,KeepRot:Dummy_Root;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Hand_02:Dummy_R_HandFX:hand01;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Cast_01:Dummy_Root:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_BodyFX_Cast_01:Dummy_BodyFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Hand01_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Self_Earth_HandFX_Hand01_01:Dummy_L_HandFX,Dummy_R_HandFX:hand01" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillTier" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore: 3 Source-Points." />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="Name" type="NameStatObjectFieldDefinition" value="S7_CS_ChannelSource_IV" />
+        <field name="ForGameMaster" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Ability" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillAbility" />
+        <field name="ActionPoints" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="Cooldown" type="IntegerStatObjectFieldDefinition" value="4" />
+        <field name="SkillProperties" type="StringStatObjectFieldDefinition" value="S7_ChannelSource_GAINED_SOURCE_III,100,0;BLESSED,100,3;Bless" />
+        <field name="TargetConditions" type="StringStatObjectFieldDefinition" value="Ally" />
+        <field name="UseCharacterStats" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponDamage" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="UseWeaponProperties" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Autocast" type="EnumerationStatObjectFieldDefinition" value="0" enumeration_type_name="YesNo" />
+        <field name="Icon" type="StringStatObjectFieldDefinition" value="Skill_Source_ReplenishSource" />
+        <field name="DisplayName" type="TranslatedStringStatObjectFieldDefinition" value="Channel Source, Divine" />
+        <field name="Description" type="TranslatedStringStatObjectFieldDefinition" value="You bless the &lt;font color='#008080'&gt;Source &lt;/font&gt;down in Rivellon. Everyone in a 7m Radius is Blessed and gains 3 Source-Points." />
+        <field name="FXScale" type="IntegerStatObjectFieldDefinition" value="50" />
+        <field name="PrepareAnimationInit" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_start" />
+        <field name="PrepareAnimationLoop" type="StringStatObjectFieldDefinition" value="skill_prepare_divine_01_loop" />
+        <field name="PrepareEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Prepare_Soul_Self_Hand_01:Dummy_R_Hand;RS3_FX_Skills_Totem_Prepare_Divine_Apotheosis_Root_01,KeepRot:Dummy_Root;RS3_FX_Soul_Prepare_Soul_Root_01,KeepRot;RS3_FX_Soul_Prepare_Soul_Hand_01:Dummy_R_HandFX;RS3_FX_Soul_Prepare_Soul_Hand_02:Dummy_L_HandFX" />
+        <field name="CastAnimation" type="StringStatObjectFieldDefinition" value="skill_cast_shout_01_cast" />
+        <field name="CastTextEvent" type="StringStatObjectFieldDefinition" value="cast" />
+        <field name="CastEffect" type="StringStatObjectFieldDefinition" value="RS3_FX_Skills_Soul_Cast_SpiritVision_Overlay_01:root;RS3_FX_Skills_Soul_Cast_Ghosts_Root_01:root:cast;RS3_FX_Skills_Soul_Cast_Soul_Self_Head_01:Dummy_CastFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Cast_01:Dummy_Root:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_BodyFX_Cast_01:Dummy_BodyFX:cast;RS3_FX_Skills_Totem_Cast_Self_Earth_Root_Hand01_01:Dummy_Root;RS3_FX_Skills_Totem_Cast_Self_Earth_HandFX_Hand01_01:Dummy_L_HandFX,Dummy_R_HandFX:hand01;RS3_FX_Skills_Divine_MassBless_Impact_01:root:cast" />
+        <field name="Magic Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="CanTargetCharacters" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="CanTargetItems" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="YesNo" />
+        <field name="Tier" type="EnumerationStatObjectFieldDefinition" value="4" enumeration_type_name="SkillTier" />
+        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="Bless" />
+        <field name="AreaRadius" type="IntegerStatObjectFieldDefinition" value="7" />
+        <field name="Memory Cost" type="IntegerStatObjectFieldDefinition" value="0" />
+        <field name="StatsDescription" type="TranslatedStringStatObjectFieldDefinition" value="Restore: 3 Source-Points." />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

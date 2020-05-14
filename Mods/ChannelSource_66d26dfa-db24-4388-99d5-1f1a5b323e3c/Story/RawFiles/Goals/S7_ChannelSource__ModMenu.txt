@@ -1,0 +1,138 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+//  ====================================================================================================================================
+//  |                                                           MOD-MENU                                                               |
+//  ====================================================================================================================================
+
+//============================================================================================================================================
+//  DB_S7_ChannelSource_ModConfig_Books((INTEGER)_TierNo,  (STRING)_ItemTemplate,                                               (STRING)_LOCATION)
+    DB_S7_ChannelSource_ModConfig_Books(1,     "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69",        "RC_Main");
+    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_ChannelSource_II_4cb15e3d-24e5-481c-98b8-9305a6019578",       "CoS_Main");
+    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_SiphonSource_I_8651743f-c1e8-43c1-809f-12c738f74571",         "CoS_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_III_a5ca77fd-9fc0-4ac4-beba-48f41d338bf3",      "ARX_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "ARX_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "ChannelSource_Blank");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "_TMPL_Sandbox");
+//============================================================================================================================================
+
+KBSECTION
+
+//=============================
+//REGION  START MOD-MENU DIALOG
+
+//  _______________________________________________________________
+//  Combine an identifying-glass with any Channel-Source Skillbook.
+//  ***************************************************************
+
+IF                                      
+ItemTemplateCombinedWithItemTemplate("TOOL_IdentifyingGlass_A_32288ce4-3d8d-46b3-a655-598350a96201", _CSBook, _, _, _, _Character, _)  
+AND
+DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                          //  Fetches book names from the DB.       
+AND
+DB_IsPlayer(_Character)                                        
+AND
+QRY_SpeakerIsAvailable(_Character)                                          //  Checks whether player can have a dialog.
+THEN
+Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
+/* [OSITOOLS_ONLY] 
+NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Activated.");
+*/
+
+//  _______________________________________________________________
+//    Combine Channel-Source Skillbook with an identifying-glass  
+//  ***************************************************************
+
+IF                                      
+ItemTemplateCombinedWithItemTemplate(_CSBook,"TOOL_IdentifyingGlass_A_32288ce4-3d8d-46b3-a655-598350a96201" , _, _, _, _Character, _)  
+AND
+DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                          //  Fetches book names from the DB.       
+AND
+DB_IsPlayer(_Character)                                        
+AND
+QRY_SpeakerIsAvailable(_Character)                                          //  Checks whether player can have a dialog.
+THEN
+Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
+/* [OSITOOLS_ONLY] 
+NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Activated.");
+*/
+
+//END_REGION
+//=============================
+
+//=============================
+//REGION   GIVE_MISSING_BOOKS
+
+IF
+GlobalFlagSet("S7_ChannelSource_GiveMeBooks")                               //  Flag set by dialog option.
+AND
+DB_IsPlayer(_Character)
+THEN
+Proc_S7_ChannelSource_GiveMeBooks(_Character);
+GlobalClearFlag("S7_ChannelSource_GiveMeBooks");                            //  Clears the flag.
+
+PROC
+Proc_S7_ChannelSource_GiveMeBooks((CHARACTERGUID)_Character)
+AND
+GetRegion(_Character, _CurrentRegion)                                       //  Gets the current-region to ascertain which skillbooks the player has missed
+AND                                                                         //  and which they can still acquire.
+DB_S7_ChannelSource_ModConfig_Books(_CurrentTierNo, _, _CurrentRegion)
+THEN
+DB_S7_CS_GiveMeBooks_Temp(_CurrentTierNo);                                  //  Create Temporary DB
+
+PROC
+Proc_S7_ChannelSource_GiveMeBooks((CHARACTERGUID)_Character)                                    
+AND
+DB_S7_CS_GiveMeBooks_Temp(_CurrentTierNo)                                   //  Retrieve facts from Temporary DB
+AND
+DB_S7_ChannelSource_ModConfig_Books(_TierNo, _CSBook, _)                    //  Fetches the entire DB. To compare with CurrentTierNo.
+AND
+_TierNo <= _CurrentTierNo                                                   //  Prevents granting skill-books that you can still encounter.
+AND
+NOT ItemTemplateIsInPartyInventory(_Character, _CSBook, 1, 1)               //  Checks whether you already have a copy.
+AND
+StringConcatenate("[S7:ChannelSource - ModMenu] --- Book added to player-inventory: ", _CSBook, _LogBook)
+THEN
+ItemTemplateAddTo(_CSBook, _Character, 1);                                  //  Adds the skill-book to player inventory.
+NOT DB_S7_CS_GiveMeBooks_Temp(_CurrentTierNo);                              //  Remove Temporary DB
+/* [OSITOOLS_ONLY]
+NRD_DebugLog(_LogBook);
+*/
+
+IF
+CharacterLearnedSkill(_Character, "Shout_S7_CS_ChannelSource_IV")
+AND
+DB_IsPlayer(_Character)
+THEN
+NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f", "ARX_Main");
+NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f", "ChannelSource_Blank");
+NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f", "_TMPL_Sandbox");
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Player learned Channel-Source-IV. Removing CS-IV entries from DB to prevent the player from regaining it.");
+*/
+
+
+//END_REGION
+//=============================
+
+//=============================
+//REGION   MISCELLANEOUS
+
+IF
+GlobalFlagSet("S7_CS_ModAddedTo_NewGame")
+THEN
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "New-Game");
+
+IF
+GlobalFlagSet("S7_CS_ModAddedTo_ExistingSave")
+THEN
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "Existing-Save");
+
+//END_REGION
+//=============================
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "S7__ChannelSource_Initializer"

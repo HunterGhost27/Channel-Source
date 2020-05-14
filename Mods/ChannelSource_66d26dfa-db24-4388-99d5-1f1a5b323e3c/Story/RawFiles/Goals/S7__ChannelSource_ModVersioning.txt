@@ -1,0 +1,155 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+//  ==================================    MOD VERSION (NAME, CURRENT VERSION)    ========================================
+//  DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
+//  =====================================================================================================================
+
+//  =====================================================================================================================
+//  DB_S7_ChangeLogs((STRING)_ModName,      (STRING)_Type,                                          (ITEMGUID)_ITEMGUID);
+    DB_S7_ChangeLogs("S7_ChannelSource",    "Log",               "S7_CS_CHANGELOG_26c6d621-4a11-4d7b-b875-74173068d64a");
+    DB_S7_ChangeLogs("S7_ChannelSource",    "Note",         "S7_CS_HuntersLeaflet_f3b41fbf-1731-4bb1-9467-145ad8b51bb4");
+//  =====================================================================================================================
+
+//=======================================================================================================================
+//  DB_S7_ChannelSource_Updater_Rename((STRING)_SKILL2REMOVE,        (STRING)_SKILL2ADD,              (STRING)_SKILLBOOK);
+    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_I",      "Shout_S7_CS_ChannelSource_I",   "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69");
+    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_II",     "Shout_S7_CS_ChannelSource_II",  "BOOK_Skill_Source_ChannelSource_II_4cb15e3d-24e5-481c-98b8-9305a6019578");
+    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_III",    "Shout_S7_CS_ChannelSource_III", "BOOK_Skill_Source_ChannelSource_III_a5ca77fd-9fc0-4ac4-beba-48f41d338bf3");
+    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_IV",     "Shout_S7_CS_ChannelSource_IV",  "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f");
+    DB_S7_ChannelSource_Updater_Rename("Target_SiphonSource_I",      "Target_S7_CS_SiphonSource_I",   "BOOK_Skill_Source_SiphonSource_I_8651743f-c1e8-43c1-809f-12c738f74571");
+//=======================================================================================================================
+
+KBSECTION
+
+//  ==================
+//  UPDATE MOD VERSION
+//  ==================
+
+IF
+GameStarted(_, _)
+AND
+NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0")  //  Latest-Version does not exist.
+THEN
+Proc_S7_ChannelSource_Updater();                        //  Run Update Procedure.
+GlobalSetFlag("S7_CS_CHANGELOG");                       //  Request CHANGELOG.
+DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0");     //  Add the latest version in the DB.
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.1.0.0");
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Mod Updated to Version: 1.1.0.0");
+*/
+
+//  ==================
+//REGION CHANGELOG
+
+//  _____________________________________
+//  FUNCTION ---    AN ACTUAL LOG
+//  *************************************
+
+IF
+GlobalFlagSet("S7_CS_CHANGELOG")                                    //  CHANGELOG requested through update or dialog option.
+THEN
+GlobalClearFlag("S7_CS_CHANGELOG");                                 //  Clears flag.
+Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls procedure.
+
+PROC
+Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
+AND
+DB_IsPlayer(_Character)     
+AND
+DB_S7_ChangeLogs("S7_ChannelSource", _ItemType, _LogItem)           //  Gets the Note and Log from the DB.
+AND
+NOT ItemTemplateIsInPartyInventory(_Character, _LogItem, 1, 1)      //  Checks if player doesn't already have those items in inventory
+AND
+StringConcatenate("[S7:ChannelSource - ModVersioning] --- ", _ItemType, _TempStr)
+AND
+StringConcatenate(_TempStr, " added to player inventory.", _LogPlayerLog)
+THEN
+ItemTemplateAddTo(_LogItem, _Character, 1);                         //  Adds the Note and Changelog to the player's inventory.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog(_LogPlayerLog);
+*/
+
+//END_REGION
+//  ==================
+
+//===================
+//REGION UPDATER
+
+//  _____________________________________________________________________
+//  FUNCTION --- Swaps old skills with new ones for future compatibility.
+//  *********************************************************************
+
+PROC    
+Proc_S7_ChannelSource_Updater()                                 
+AND                                                     
+DB_IsPlayer(_Character)
+AND
+DB_S7_ChannelSource_Updater_Rename(_Skill2Remove, _Skill2Add, _)        //  Fetches skills and books from the DB.
+AND
+CharacterHasSkill(_Character, _Skill2Remove, 1)                         //  Checks whether character has old-skills.
+AND
+StringConcatenate("[S7:ChannelSource - ModVersioning] --- ", _Skill2Remove, _TempStr)
+AND
+StringConcatenate(_TempStr, " Swapped with ", _TempStr2)
+AND
+StringConcatenate(_TempStr2, _Skill2Add, _LogSSwappedSkill)
+THEN
+CharacterAddSkill(_Character, _Skill2Add);                              //  Adds new-skills.
+CharacterRemoveSkill(_Character, _Skill2Remove);                        //  Removes Old-skills.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog(_LogSSwappedSkill);
+NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Skills swapped for better naming conventions.");
+*/
+
+//  _____________________________________________________________________________________________
+//  FUNCTION --- Removes and Re-adds skillbooks to player inventory in an attempt to cull crashes.
+//  *********************************************************************************************
+
+PROC
+Proc_S7_ChannelSource_Updater()                                 
+AND                                                     
+DB_IsPlayer(_Character)
+AND
+DB_S7_ChannelSource_Updater_Rename(_, _, _CSBook)                       //  Fetches books from the DB.
+AND
+ItemTemplateIsInCharacterInventory(_Character, _CSBook, 1)              //  Checks whether party has old-skillbooks.
+THEN
+ItemTemplateRemoveFromUser(_CSBook, _Character, 1);                     //  Removes skillbooks.
+ItemTemplateAddTo(_CSBook, _Character, 1);                              //  Re-adds skillbooks.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Books re-added to prevent crashes when opening mod-menu.");
+*/
+
+//  _____________________________________
+//  FUNCTION --- Cleans unused Databases.
+//  *************************************
+
+PROC    
+Proc_S7_ChannelSource_Updater()
+THEN
+//SysClear("DB_S7_ChannelSource_Updater_Rename", 3);                      //  Uncomment to remove Updater_Rename when its no-longer needed.
+SysClear("DB_S7_ChannelSource_ScriptEnabled", 1);                       //  Cleans up an Old-DB - was used to toggle DUBA.
+
+//  __________________________________________________
+//  FUNCTION ---       Clears Mod-Identifier
+//  **************************************************
+
+PROC    
+Proc_S7_ChannelSource_Updater()                             
+AND
+DB_S7_ModIdentifier("S7_ChannelSource", _ModVersion)                    //  Gets all facts from ModIdentifier for Channel-Source.
+AND
+_ModVersion != "1.1.0.0"                                                //  Filters the latest fact out, if it exists. - it shouldn't though
+THEN
+NOT DB_S7_ModIdentifier("S7_ChannelSource", _ModVersion);               //  Removes all older facts from DB.
+
+//END_REGION
+//===================
+
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "S7__ChannelSource_Initializer"

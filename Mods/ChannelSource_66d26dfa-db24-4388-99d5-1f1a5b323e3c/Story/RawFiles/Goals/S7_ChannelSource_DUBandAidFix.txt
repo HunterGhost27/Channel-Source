@@ -1,0 +1,83 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+/*  ---------------------------------------------------------------------------------------------
+Divinity Unleashed (as of 1st-Apr-2020) converts all forms of non-vitality healing (including 
+source) into vitality healing. This script detects DU and adds the Source-points using the call
+"CharacterAddSourcePoints()" to compensate.
+------------------------------------------------------------------------------------------------*/
+
+/* [OSITOOLS_ONLY]
+//================================================================================================
+//  DB_S7_ChannelSource_DUBA((STRING)_StatusName,                 (INTEGER)_SourceRegenAmount);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_I",                            1);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_II",                           2);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_III",                          3);
+//================================================================================================
+*/
+
+//================================================================================================
+GlobalSetFlag("S7_ChannelSource_DUBA_Disabled");   //  <<<<<<<<<   DEFAULT STATE   <<<<<<<<<<<<<<<
+//================================================================================================
+
+KBSECTION
+
+//=========================
+//REGION DUBA_TOGGLE
+
+//  _________________________________________
+//  SWITCH DUBA:    ENABLED -------> DISABLED
+//  *****************************************
+
+IF
+GlobalFlagSet("S7_ChannelSource_DUBA_Enabled")              //  Flag set by dialog option.
+THEN
+GlobalClearFlag("S7_ChannelSource_DUBA_Disabled");          //  Remove mutually exclusive flag.
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Enabled");    //  Sets dialog variable.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7:ChannelSource - DUBA] --- Status: Enabled.");
+*/
+
+//  _________________________________________
+//  SWITCH DUBA:    DISABLED -------> ENABLED
+//  *****************************************
+
+IF
+GlobalFlagSet("S7_ChannelSource_DUBA_Disabled")             // Flag set by dialog option.
+THEN
+GlobalClearFlag("S7_ChannelSource_DUBA_Enabled");           // Remove mutually exclusive flag.
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Disabled");   //  Sets dialog variable.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7:ChannelSource - DUBA] --- Status: Disabled.");
+*/
+
+//END_REGION
+//=========================
+
+/* [OSITOOLS_ONLY]
+
+IF
+GameStarted(_, _)
+AND
+NRD_IsModLoaded(e844229e-b744-4294-9102-a7362a926f71, 1)                            //  Check if Divinity Unleashed is loaded
+THEN
+NRD_DebugLog("[S7:ChannelSource - DUBA] --- Divinity Unleashed detected.");
+GlobalSetFlag("S7_ChannelSource_DUBA_Enabled");                                     //  Set DUBA Flag to Enabled
+
+IF
+NRD_OnStatusAttempt(_Character, _ChannelSourceStatus, _StatusHandle, _)             //  On Channel-Source Status Attempt                                             //  Master Toggle Enabled
+AND
+GlobalGetFlag("S7_ChannelSource_DUBA_Enabled", 1)                                   //  Check if DUBA Flag is set
+AND
+DB_S7_ChannelSource_DUBA(_ChannelSourceStatus, _ChannelSourceAddSourcePoints)       //  Get the amount of SP restoration for said status
+THEN
+NRD_StatusPreventApply((CHARACTERGUID)_Character, _StatusHandle, 1);                //  Prevent the application of the status
+CharacterAddSourcePoints((CHARACTERGUID)_Character, _ChannelSourceAddSourcePoints); //  Add SP
+
+*/
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "S7__ChannelSource_Initializer"
