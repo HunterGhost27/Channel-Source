@@ -3,6 +3,7 @@
     "ModTable": "S7_ChannelSource",
     "FeatureFlags": [
         "OsirisExtensions",
-        "Preprocessor"
+        "Preprocessor",
+        "Lua"
     ]
 }
