@@ -1,7 +1,6 @@
 Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
-
 //  ==================================    MOD VERSION (NAME, CURRENT VERSION)    ========================================
 //  DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
 //  =====================================================================================================================
@@ -22,7 +21,6 @@ INITSECTION
 //=======================================================================================================================
 
 KBSECTION
-
 //  ==================
 //  UPDATE MOD VERSION
 //  ==================
@@ -52,6 +50,17 @@ GlobalFlagSet("S7_CS_CHANGELOG")                                    //  CHANGELO
 THEN
 GlobalClearFlag("S7_CS_CHANGELOG");                                 //  Clears flag.
 Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls procedure.
+
+PROC
+Proc_S7_ChannelSource_ChangelogRequest()
+AND
+DB_IsPlayer(_Character)
+AND
+DB_S7_ChangeLogs("S7_ChannelSource", _, _LogItem)                   //  Fetches LogItems from DB
+AND
+ItemTemplateIsInPartyInventory(_Character, _LogItem, 1, 1)          //  Character already has CHANGELOG. (old instances for example)
+THEN
+ItemTemplateRemoveFromUser(_LogItem, _Character, 1);                //  Removes old instances of items from player's inventory.
 
 PROC
 Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
@@ -94,12 +103,12 @@ StringConcatenate("[S7:ChannelSource - ModVersioning] --- ", _Skill2Remove, _Tem
 AND
 StringConcatenate(_TempStr, " Swapped with ", _TempStr2)
 AND
-StringConcatenate(_TempStr2, _Skill2Add, _LogSSwappedSkill)
+StringConcatenate(_TempStr2, _Skill2Add, _LogSwappedSkill)
 THEN
 CharacterAddSkill(_Character, _Skill2Add);                              //  Adds new-skills.
 CharacterRemoveSkill(_Character, _Skill2Remove);                        //  Removes Old-skills.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog(_LogSSwappedSkill);
+NRD_DebugLog(_LogSwappedSkill);
 NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Skills swapped for better naming conventions.");
 */
 

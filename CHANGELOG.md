@@ -2,6 +2,17 @@
 
 ----------
 
+## [1.1.1.0] --- 16th May 2020 --- **__LUA__**
+
+### NEW
+
+* Enabled LUA.
+
+### CHANGED
+
+* PROC Proc_S7_ChannelSource_ChangelogRequest() removes old-instances of CHANGELOG from the player inventory before granting the items.
+* (minor) Fixed a typo in a variable name: _LogSSwappedSkill to _LogSwappedSkill.
+
 ## [1.1.0.0] --- 14th May 2020 --- **_Channel-Source Reborn_**
 
 ### NEW
