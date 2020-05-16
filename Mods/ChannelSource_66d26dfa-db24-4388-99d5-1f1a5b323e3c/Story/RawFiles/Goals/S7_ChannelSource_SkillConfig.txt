@@ -1,0 +1,60 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+//  =============================================================================================================================================
+//  |                                                   SKILL-CONFIGURATOR                                                                      |
+//  =============================================================================================================================================
+
+
+//  =============================================================================================================================================
+//  DB_S7_ChannelSource_SkillConfig((STRING)_SKILLNAME);
+    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_I");
+    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_II");
+    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_III");
+    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_IV");
+    DB_S7_ChannelSource_SkillConfig("Target_S7_CS_SiphonSource_I");
+//  ==============================================================================================================================================
+
+KBSECTION
+
+IF
+GlobalFlagSet("S7_CS_MutualCooldown")
+THEN
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907", "Enabled.");
+
+IF
+GlobalFlagCleared("S7_CS_MutualCooldown")
+THEN
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907", "Disabled.");
+
+IF
+CharacterUsedSkill(_Character, _SkillCast, _, _)                                        //  If character used a channel-source skill.
+AND
+GlobalGetFlag("S7_CS_MutualCooldown", 1)                                                //  And Mutual-Cooldown option is enabled.
+AND
+DB_IsPlayer(_Character)
+AND
+DB_S7_ChannelSource_SkillConfig(_SkillCast)                                             //  Fetch Skillnames from DB.
+THEN
+Proc_S7_ChannelSource_MutualCooldown(_Character, _SkillCast);                           //  Mutual-Cooldowns Procedure call.
+
+PROC
+Proc_S7_ChannelSource_MutualCooldown((CHARACTERGUID)_Character, (STRING)_SkillCast)     //  Mutual-Cooldown Procedure definition.
+AND
+DB_S7_ChannelSource_SkillConfig(_SkillNotCast)                                          //  Fetches all skillnames from DB.
+AND
+_SkillCast != _SkillNotCast                                                             //  Filters out the skill that was cast. It will be put on cooldown anyway. Probably not necessary.
+AND
+NRD_StatGetInt(_SkillNotCast, "Cooldown", _Cooldown)                                    //  Gets the Cooldown of the remaining skills.
+AND
+IntegerProduct(_Cooldown, 6, _CooldownInSeconds)                                        //  Converts Number-of-turns to time-in-seconds.
+AND
+Real(_CooldownInSeconds, _CooldownReal)                                                 //  Casts the value as a real-number instead of integer. cuz osiris.
+THEN
+NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                         //  Puts all remaining skills in cooldown.
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "S7__ChannelSource_Initializer"

@@ -26,6 +26,13 @@
                     <attribute id="name" value="InstalledOn" type="22" />
                     <attribute id="type" value="FixedString" type="23" />
                 </node>
+                <node id="DialogVariable">
+                    <attribute id="DefaultValue" value="Disabled." type="23" />
+                    <attribute id="Description" value="Mutual-Cooldown Status" type="23" />
+                    <attribute id="UUID" value="b0787502-bf55-467b-b935-14f0c08c1907" type="31" />
+                    <attribute id="name" value="S7CSMutualCooldown" type="22" />
+                    <attribute id="type" value="FixedString" type="23" />
+                </node>
             </children>
         </node>
     </region>

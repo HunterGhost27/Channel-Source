@@ -7,6 +7,7 @@
 ### NEW
 
 * Enabled LUA.
+* Option to enable Mutual-Cooldowns for all the Channel-Source skills. Created appropriate dialog options and variables.
 
 ### CHANGED
 
