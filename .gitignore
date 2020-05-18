@@ -120,4 +120,7 @@ Thumbs.db
 #       HUNTER-GHOST-27
 #   ######################
 
+#   Markdown
 .markdownlint.json
+#   VSCode
+settings.json   

@@ -112,7 +112,6 @@ NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1
 NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Player learned Channel-Source-IV. Removing CS-IV entries from DB to prevent the player from regaining it.");
 */
 
-
 //END_REGION
 //=============================
 

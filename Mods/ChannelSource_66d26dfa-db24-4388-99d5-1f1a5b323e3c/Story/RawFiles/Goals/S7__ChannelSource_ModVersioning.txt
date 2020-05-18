@@ -1,6 +1,7 @@
 Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
+
 //  ==================================    MOD VERSION (NAME, CURRENT VERSION)    ========================================
 //  DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
 //  =====================================================================================================================
@@ -21,6 +22,7 @@ INITSECTION
 //=======================================================================================================================
 
 KBSECTION
+
 //  ==================
 //  UPDATE MOD VERSION
 //  ==================
@@ -28,17 +30,17 @@ KBSECTION
 IF
 GameStarted(_, _)
 AND
-NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0")  //  Latest-Version does not exist.
+NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0")              //  Latest-Version does not exist.
 THEN
-Proc_S7_ChannelSource_Updater();                        //  Run Update Procedure.
-GlobalSetFlag("S7_CS_CHANGELOG");                       //  Request CHANGELOG.
-DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0");     //  Add the latest version in the DB.
+Proc_S7_ChannelSource_Updater();                                    //  Run Update Procedure.
+GlobalSetFlag("S7_CS_CHANGELOG");                                   //  Request CHANGELOG.
+DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0");                 //  Add the latest version in the DB.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.1.0.0");
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Mod Updated to Version: 1.1.0.0");
 */
 
-//  ==================
+//====================
 //REGION CHANGELOG
 
 //  _____________________________________
@@ -52,7 +54,7 @@ Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls pr
 GlobalClearFlag("S7_CS_CHANGELOG");                                 //  Clears flag.
 
 PROC
-Proc_S7_ChannelSource_ChangelogRequest()
+Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
 AND
 DB_IsPlayer(_Character)
 AND
@@ -81,9 +83,9 @@ NRD_DebugLog(_LogPlayerLog);
 */
 
 //END_REGION
-//  ==================
+//====================
 
-//===================
+//====================
 //REGION UPDATER
 
 //  _____________________________________________________________________
@@ -155,8 +157,7 @@ THEN
 NOT DB_S7_ModIdentifier("S7_ChannelSource", _ModVersion);               //  Removes all older facts from DB.
 
 //END_REGION
-//===================
-
+//====================
 
 EXITSECTION
 

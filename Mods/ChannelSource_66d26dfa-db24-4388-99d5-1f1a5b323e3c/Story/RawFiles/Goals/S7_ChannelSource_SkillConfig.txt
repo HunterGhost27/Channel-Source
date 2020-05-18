@@ -3,7 +3,7 @@ SubGoalCombiner SGC_AND
 INITSECTION
 
 //  =============================================================================================================================================
-//  |                                                   SKILL-CONFIGURATOR                                                                      |
+//  |                                                             SKILL-CONFIGURATOR                                                            |
 //  =============================================================================================================================================
 
 
@@ -18,6 +18,10 @@ INITSECTION
 
 KBSECTION
 
+//  ======================
+//          TOGGLES
+//  ======================
+
 IF
 GlobalFlagSet("S7_CS_MutualCooldown")
 THEN
@@ -27,6 +31,9 @@ IF
 GlobalFlagCleared("S7_CS_MutualCooldown")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907", "Disabled.");
+
+//  ==========================
+//REGION  MUTUAL-COOLDOWN
 
 IF
 CharacterUsedSkill(_Character, _SkillCast, _, _)                                        //  If character used a channel-source skill.
@@ -53,6 +60,9 @@ AND
 Real(_CooldownInSeconds, _CooldownReal)                                                 //  Casts the value as a real-number instead of integer. cuz osiris.
 THEN
 NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                         //  Puts all remaining skills in cooldown.
+
+//END_REGION
+//  ==========================
 
 EXITSECTION
 
