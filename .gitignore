@@ -124,3 +124,4 @@ Thumbs.db
 .markdownlint.json
 #   VSCode
 settings.json   
+*.code-workspace

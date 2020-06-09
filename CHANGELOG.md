@@ -11,7 +11,7 @@
 
 ### CHANGED
 
-* PROC Proc_S7_ChannelSource_ChangelogRequest() removes old-instances of CHANGELOG from the player inventory before granting the items.
+* `PROC Proc_S7_ChannelSource_ChangelogRequest()` removes old-instances of CHANGELOG from the player inventory before granting the items.
 * (minor) Fixed a typo in a variable name: _LogSSwappedSkill_ to _LogSwappedSkill_.
 
 ## [1.1.0.0] --- 14th May 2020 --- **_Channel-Source Reborn_**

@@ -37,7 +37,7 @@ GlobalSetFlag("S7_CS_CHANGELOG");                                   //  Request 
 DB_S7_ModIdentifier("S7_ChannelSource", "1.1.0.0");                 //  Add the latest version in the DB.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.1.0.0");
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Mod Updated to Version: 1.1.0.0");
+NRD_DebugLog("[S7_ChannelSource - ModVersioning] --- Mod Updated to Version: 1.1.0.0");
 */
 
 //====================
@@ -73,7 +73,7 @@ DB_S7_ChangeLogs("S7_ChannelSource", _ItemType, _LogItem)           //  Gets the
 AND
 NOT ItemTemplateIsInPartyInventory(_Character, _LogItem, 1, 1)      //  Checks if player doesn't already have those items in inventory
 AND
-StringConcatenate("[S7:ChannelSource - ModVersioning] --- ", _ItemType, _TempStr)
+StringConcatenate("[S7_ChannelSource - ModVersioning] --- ", _ItemType, _TempStr)
 AND
 StringConcatenate(_TempStr, " added to player inventory.", _LogPlayerLog)
 THEN
@@ -101,7 +101,7 @@ DB_S7_ChannelSource_Updater_Rename(_Skill2Remove, _Skill2Add, _)        //  Fetc
 AND
 CharacterHasSkill(_Character, _Skill2Remove, 1)                         //  Checks whether character has old-skills.
 AND
-StringConcatenate("[S7:ChannelSource - ModVersioning] --- ", _Skill2Remove, _TempStr)
+StringConcatenate("[S7_ChannelSource - ModVersioning] --- ", _Skill2Remove, _TempStr)
 AND
 StringConcatenate(_TempStr, " Swapped with ", _TempStr2)
 AND
@@ -111,7 +111,7 @@ CharacterAddSkill(_Character, _Skill2Add);                              //  Adds
 CharacterRemoveSkill(_Character, _Skill2Remove);                        //  Removes Old-skills.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog(_LogSwappedSkill);
-NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Skills swapped for better naming conventions.");
+NRD_DebugLog("[S7_ChannelSource - ModVersioning] --- Skills swapped for better naming conventions.");
 */
 
 //  _____________________________________________________________________________________________
@@ -130,7 +130,7 @@ THEN
 ItemTemplateRemoveFromUser(_CSBook, _Character, 1);                     //  Removes skillbooks.
 ItemTemplateAddTo(_CSBook, _Character, 1);                              //  Re-adds skillbooks.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - ModVersioning] --- Books re-added to prevent crashes when opening mod-menu.");
+NRD_DebugLog("[S7_ChannelSource - ModVersioning] --- Books re-added to prevent crashes when opening mod-menu.");
 */
 
 //  _____________________________________

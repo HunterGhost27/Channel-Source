@@ -36,7 +36,7 @@ THEN
 GlobalClearFlag("S7_ChannelSource_DUBA_Disabled");          //  Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Enabled");    //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - DUBA] --- Status: Enabled.");
+NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Enabled.");
 */
 
 //  _________________________________________
@@ -49,7 +49,7 @@ THEN
 GlobalClearFlag("S7_ChannelSource_DUBA_Enabled");           // Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Disabled");   //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - DUBA] --- Status: Disabled.");
+NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Disabled.");
 */
 
 //END_REGION
@@ -62,7 +62,7 @@ GameStarted(_, _)
 AND
 NRD_IsModLoaded(e844229e-b744-4294-9102-a7362a926f71, 1)                            //  Check if Divinity Unleashed is loaded
 THEN
-NRD_DebugLog("[S7:ChannelSource - DUBA] --- Divinity Unleashed detected.");
+NRD_DebugLog("[S7_ChannelSource - DUBA] --- Divinity Unleashed detected.");
 GlobalSetFlag("S7_ChannelSource_DUBA_Enabled");                                     //  Set DUBA Flag to Enabled
 
 IF

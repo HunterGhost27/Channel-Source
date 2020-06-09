@@ -1,4 +1,4 @@
-# ChannelSource for Divinity: Original Sin 2 - Definitive Edition
+# Channel Source for Divinity: Original Sin 2 - Definitive Edition
 
 ----------
 

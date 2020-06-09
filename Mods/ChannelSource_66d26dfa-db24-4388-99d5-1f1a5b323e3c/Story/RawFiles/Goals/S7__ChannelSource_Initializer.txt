@@ -17,7 +17,7 @@ GameEventSet("GAMEEVENT_GameStarted")
 THEN
 GlobalSetFlag("S7_CS_ModAddedTo_NewGame");
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - Initializer] --- Parent Goal Initialized. Mod added to a new game.");
+NRD_DebugLog("[S7_ChannelSource - Initializer] --- Parent Goal Initialized. Mod added to a new game.");
 */
 GoalCompleted;
 
@@ -32,7 +32,7 @@ DB_StoryStarted(_)
 THEN
 GlobalSetFlag("S7_CS_ModAddedTo_ExistingSave");
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - Initializer] --- Parent Goal Initialized. Story was already initialized. Mod added to an existing save-file.");
+NRD_DebugLog("[S7_ChannelSource - Initializer] --- Parent Goal Initialized. Story was already initialized. Mod added to an existing save-file.");
 */
 GoalCompleted;
 

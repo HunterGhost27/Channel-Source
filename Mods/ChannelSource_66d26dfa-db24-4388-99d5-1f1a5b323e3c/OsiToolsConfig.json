@@ -1,5 +1,5 @@
 {
-    "RequiredExtensionVersion": 44,
+    "RequiredExtensionVersion": 47,
     "ModTable": "S7_ChannelSource",
     "FeatureFlags": [
         "OsirisExtensions",

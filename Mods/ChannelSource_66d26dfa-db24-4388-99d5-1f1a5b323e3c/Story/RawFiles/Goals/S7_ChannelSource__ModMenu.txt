@@ -37,7 +37,7 @@ QRY_SpeakerIsAvailable(_Character)                                          //  
 THEN
 Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
-NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Activated.");
+NRD_DebugLog("[S7_ChannelSource - ModMenu] --- Activated.");
 */
 
 //  _______________________________________________________________
@@ -55,7 +55,7 @@ QRY_SpeakerIsAvailable(_Character)                                          //  
 THEN
 Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
-NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Activated.");
+NRD_DebugLog("[S7_ChannelSource - ModMenu] --- Activated.");
 */
 
 //END_REGION
@@ -92,7 +92,7 @@ _TierNo <= _CurrentTierNo                                                   //  
 AND
 NOT ItemTemplateIsInPartyInventory(_Character, _CSBook, 1, 1)               //  Checks whether you already have a copy.
 AND
-StringConcatenate("[S7:ChannelSource - ModMenu] --- Book added to player-inventory: ", _CSBook, _LogBook)
+StringConcatenate("[S7_ChannelSource - ModMenu] --- Book added to player-inventory: ", _CSBook, _LogBook)
 THEN
 ItemTemplateAddTo(_CSBook, _Character, 1);                                  //  Adds the skill-book to player inventory.
 NOT DB_S7_CS_GiveMeBooks_Temp(_CurrentTierNo);                              //  Remove Temporary DB
@@ -109,7 +109,7 @@ NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1
 NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f", "ChannelSource_Blank");
 NOT DB_S7_ChannelSource_ModConfig_Books(3, "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f", "_TMPL_Sandbox");
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7:ChannelSource - ModMenu] --- Player learned Channel-Source-IV. Removing CS-IV entries from DB to prevent the player from regaining it.");
+NRD_DebugLog("[S7_ChannelSource - ModMenu] --- Player learned Channel-Source-IV. Removing CS-IV entries from DB to prevent the player from regaining it.");
 */
 
 //END_REGION
