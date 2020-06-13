@@ -2,12 +2,6 @@ Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
 
-/*  ---------------------------------------------------------------------------------------------
-Divinity Unleashed (as of 1st-Apr-2020) converts all forms of non-vitality healing (including 
-source) into vitality healing. This script detects DU and adds the Source-points using the call
-"CharacterAddSourcePoints()" to compensate.
-------------------------------------------------------------------------------------------------*/
-
 /* [OSITOOLS_ONLY]
 //================================================================================================
 //  DB_S7_ChannelSource_DUBA((STRING)_StatusName,                 (INTEGER)_SourceRegenAmount);
@@ -56,14 +50,6 @@ NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Disabled.");
 //=========================
 
 /* [OSITOOLS_ONLY]
-
-IF
-GameStarted(_, _)
-AND
-NRD_IsModLoaded(e844229e-b744-4294-9102-a7362a926f71, 1)                            //  Check if Divinity Unleashed is loaded
-THEN
-NRD_DebugLog("[S7_ChannelSource - DUBA] --- Divinity Unleashed detected.");
-GlobalSetFlag("S7_ChannelSource_DUBA_Enabled");                                     //  Set DUBA Flag to Enabled
 
 IF
 NRD_OnStatusAttempt(_Character, _ChannelSourceStatus, _StatusHandle, _)             //  On Channel-Source Status Attempt                                             //  Master Toggle Enabled

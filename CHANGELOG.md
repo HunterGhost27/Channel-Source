@@ -2,12 +2,12 @@
 
 ----------
 
-## [1.1.1.0] --- 16th May 2020 --- **__LUA__**
+## [1.1.1.0] --- 16th May 2020 --- **_LUA_**
 
 ### NEW
 
 * Enabled LUA.
-* Option to enable Mutual-Cooldowns for all the Channel-Source skills. Created appropriate dialog options and variables.
+* Option to enable ***Mutual-Cooldowns*** for all the **Channel-Source** skills. Created appropriate dialog options and variables.
 
 ### CHANGED
 
