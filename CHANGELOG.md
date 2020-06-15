@@ -2,11 +2,17 @@
 
 ----------
 
-## [1.1.1.0] --- 16th May 2020 --- **_LUA_**
+## [1.1.1.0] --- 15th June 2020 --- **Skill Configure**
 
 ### NEW
 
-* Enabled LUA.
+* _Added_ `S7_Config` as project dependancy. Temporarily.
+* _Registered_ mod to `S7_Config`.
+
+## [1.1.1.0] --- 16th May 2020 --- **_Mutual Cooldowns_**
+
+### NEW
+
 * Option to enable ***Mutual-Cooldowns*** for all the **Channel-Source** skills. Created appropriate dialog options and variables.
 
 ### CHANGED

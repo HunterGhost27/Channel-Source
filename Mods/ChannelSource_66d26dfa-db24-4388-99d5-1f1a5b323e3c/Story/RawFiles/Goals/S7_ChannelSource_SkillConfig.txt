@@ -1,11 +1,14 @@
 Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
-
 //  =============================================================================================================================================
 //  |                                                             SKILL-CONFIGURATOR                                                            |
 //  =============================================================================================================================================
 
+//  =================================================================================================================
+//  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
+    DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
+//  =================================================================================================================
 
 //  =============================================================================================================================================
 //  DB_S7_ChannelSource_SkillConfig((STRING)_SKILLNAME);
@@ -17,6 +20,17 @@ INITSECTION
 //  ==============================================================================================================================================
 
 KBSECTION
+
+//  ======================
+//      REGISTER MOD
+//  ======================
+
+IF
+GameStarted(_, _)                                                       //  If gameStarted
+AND
+NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")   //  Mod not registered to StatsConfigurator
+THEN
+DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");      //  Register Mod
 
 //  ======================
 //          TOGGLES
@@ -59,7 +73,17 @@ IntegerProduct(_Cooldown, 6, _CooldownInSeconds)                                
 AND
 Real(_CooldownInSeconds, _CooldownReal)                                                 //  Casts the value as a real-number instead of integer. cuz osiris.
 THEN
-NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                         //  Puts all remaining skills in cooldown.
+DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");   //  Stores Information in a DB
+NRD_SkillSetCooldown(_Character, _SkillNotCast, 0.0);                                   //  Set all skills off cooldown momentarily
+ProcObjectTimer(_Character, "MutualCooldownUI", 10);                                    //  Start Refresh Timer
+
+PROC
+ProcObjectTimerFinished((CHARACTERGUID)_Character, "MutualCooldownUI")                  //  Timer finished
+AND
+DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI")    //  Fetches data from DB
+THEN
+NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                             //  Puts all remaining skills in cooldown.
+NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");   //  Clears DB
 
 //END_REGION
 //  ==========================
