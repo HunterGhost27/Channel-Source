@@ -7,7 +7,7 @@ INITSECTION
 
 //  =================================================================================================================
 //  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
-    DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
+    //DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
 //  =================================================================================================================
 
 //  =============================================================================================================================================
@@ -17,6 +17,13 @@ INITSECTION
     DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_III");
     DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_IV");
     DB_S7_ChannelSource_SkillConfig("Target_S7_CS_SiphonSource_I");
+//  DB_S7_ChannelSource_AttributeConfig((STRING)_ATTRIBUTENAME);
+    DB_S7_ChannelSource_AttributeConfig("ActionPoints");
+    DB_S7_ChannelSource_AttributeConfig("Cooldown");
+    DB_S7_ChannelSource_AttributeConfig("TargetRadius");
+    DB_S7_ChannelSource_AttributeConfig("AreaRadius");
+    DB_S7_ChannelSource_AttributeConfig("Memory Cost");
+    DB_S7_ChannelSource_AttributeConfig("Magic Cost");
 //  ==============================================================================================================================================
 
 KBSECTION
@@ -31,6 +38,18 @@ AND
 NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")   //  Mod not registered to StatsConfigurator
 THEN
 DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");      //  Register Mod
+DB_S7_Config_QuickMenuRelay("S7_CS_SkillConfig");
+
+IF
+GlobalFlagSet("S7_ConfigActive")
+AND
+DB_S7_ChannelSource_SkillConfig(_SkillName)
+AND
+DB_S7_ChannelSource_AttributeConfig(_AttributeName)
+AND
+NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)
+THEN
+DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);
 
 //  ======================
 //          TOGGLES
