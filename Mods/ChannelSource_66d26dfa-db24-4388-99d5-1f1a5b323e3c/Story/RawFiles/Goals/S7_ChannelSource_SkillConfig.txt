@@ -7,7 +7,7 @@ INITSECTION
 
 //  =================================================================================================================
 //  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
-    //DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
+//  DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
 //  =================================================================================================================
 
 //  =============================================================================================================================================
@@ -24,6 +24,8 @@ INITSECTION
     DB_S7_ChannelSource_AttributeConfig("AreaRadius");
     DB_S7_ChannelSource_AttributeConfig("Memory Cost");
     DB_S7_ChannelSource_AttributeConfig("Magic Cost");
+    DB_S7_ChannelSource_AttributeConfig("Autocast");
+    DB_S7_ChannelSource_AttributeConfig("IgnoreSilence");
 //  ==============================================================================================================================================
 
 KBSECTION
@@ -33,23 +35,22 @@ KBSECTION
 //  ======================
 
 IF
-GameStarted(_, _)                                                       //  If gameStarted
+GameStarted(_, _)                                                       //  If GameStarted
 AND
 NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")   //  Mod not registered to StatsConfigurator
 THEN
 DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");      //  Register Mod
-DB_S7_Config_QuickMenuRelay("S7_CS_SkillConfig");
 
 IF
-GlobalFlagSet("S7_ConfigActive")
+GlobalFlagSet("S7_ConfigActive")                                                //  If StatsConfigurator is active
 AND
-DB_S7_ChannelSource_SkillConfig(_SkillName)
+DB_S7_ChannelSource_SkillConfig(_SkillName)                                     //  Fetch SkillNames
 AND
-DB_S7_ChannelSource_AttributeConfig(_AttributeName)
+DB_S7_ChannelSource_AttributeConfig(_AttributeName)                             //  Fetch AttributeNames
 AND
-NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)
+NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)   //  If DB entry does not exist
 THEN
-DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);
+DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);      //  Create DB entry
 
 //  ======================
 //          TOGGLES

@@ -47,7 +47,7 @@
                             <attribute id="MD5" value="" type="23" />
                             <attribute id="Name" value="Stats Configurator" type="22" />
                             <attribute id="UUID" value="de8f15f2-65a2-4ee4-a25f-7a7ab0305a58" type="22" />
-                            <attribute id="Version" value="84279296" type="4" />
+                            <attribute id="Version" value="101122048" type="4" />
                         </node>
                     </children>
                 </node>
