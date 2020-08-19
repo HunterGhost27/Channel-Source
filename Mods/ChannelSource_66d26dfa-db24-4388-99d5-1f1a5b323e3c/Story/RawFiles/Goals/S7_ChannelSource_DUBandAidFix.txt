@@ -4,10 +4,10 @@ INITSECTION
 
 /* [OSITOOLS_ONLY]
 //================================================================================================
-//  DB_S7_ChannelSource_DUBA((STRING)_StatusName,                 (INTEGER)_SourceRegenAmount);
-    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_I",                            1);
-    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_II",                           2);
-    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_III",                          3);
+//  DB_S7_ChannelSource_DUBA((STRING)_StatusName,                    (INTEGER)_SourceRegenAmount);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_I",                               1);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_II",                              2);
+    DB_S7_ChannelSource_DUBA("S7_ChannelSource_GAINED_SOURCE_III",                             3);
 //================================================================================================
 */
 
@@ -44,7 +44,7 @@ GlobalClearFlag("S7_ChannelSource_DUBA_Enabled");           // Remove mutually e
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Disabled");   //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Disabled.");
-*/
+*/ 
 
 //END_REGION
 //=========================

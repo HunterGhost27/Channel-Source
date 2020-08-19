@@ -147,7 +147,7 @@
                                                    }
                                                 ],
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h87760e54g0efdg4cb7g93d8g1b7a84ca2e02",
                                                    "type" : 28,
                                                    "value" : "[S7_CS_I_ActionPoints_8a1baef8-811d-45ff-af87-db3434ff81f8]"
                                                 },
@@ -341,9 +341,9 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h969e2d3cg4e50g4cc0g8657g9e38ec6224f8",
                                                    "type" : 28,
-                                                   "value" : "<b>[Toggle Scripted Source-gain Mode]</b> Try to change how the skills behave. [<b>Requires Script Extender</b>]"
+                                                   "value" : "<b>[Toggle Scripted Source-gain Mode]</b> Enabling switches the mod to restore source by using scripts instead of statuses. [<b>Requires Script Extender</b>]"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -651,7 +651,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h262de481gdfc8g441dga8aage81823070787",
                                                    "type" : 28,
                                                    "value" : "<b>[Enable]</b>"
                                                 },
@@ -850,12 +850,15 @@
                                                    },
                                                    {
                                                       "DialogVariables" : {"type" : 22, "value" : "cb99b60e-de2b-47f7-acd0-9a4ce882a388"}
+                                                   },
+                                                   {
+                                                      "DialogVariables" : {"type" : 22, "value" : "a2da2866-73d9-4907-95d6-35f262321ca3"}
                                                    }
                                                 ],
                                                 "TagText" : {
                                                    "handle" : "h956fe7f4g8c6ag4e3cgb394gf73f5131c25d",
                                                    "type" : 28,
-                                                   "value" : "The book imprints the following indecipherable information in your mind:<br><b>Mod Identifier:</b> [CSModID_d30774ed-d944-4296-8b64-e8bca65acb23]<br><b>Installed On:</b> [InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388]"
+                                                   "value" : "The book imprints the following indecipherable information in your mind:<br><b>Mod Identifier:</b> [CSModID_d30774ed-d944-4296-8b64-e8bca65acb23]<br><b>Installed On:</b> [InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388]<br><b>Compatibility Script:</b> [DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -949,7 +952,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h5c9a8b07g2649g49dagaee1g12aa985186cd",
                                                    "type" : 28,
                                                    "value" : "<b>[Done]</b>"
                                                 },
@@ -1045,9 +1048,9 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h75ce5d8dg8bbcg4b71gb3acgeec8add44668",
                                                    "type" : 28,
-                                                   "value" : "<b>[Configure Stats]</b>"
+                                                   "value" : "<b>[Configure Stats]</b> Modify stat-attributes like action-point cost and cooldown."
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -1151,9 +1154,9 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "hb5a823f3gcfc5g4947ga695g828e2ef51314",
                                                    "type" : 28,
-                                                   "value" : "<b>[Skill Config]</b>"
+                                                   "value" : "<b>[Skill Config]</b> Attempt to change the behaviour of the skills."
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -1254,7 +1257,7 @@
                                                 "TagText" : {
                                                    "handle" : "hb3371234g183cg46fcgac9bg3d80d709da30",
                                                    "type" : 28,
-                                                   "value" : "Enable if the skills don't restore source-points. Enabling switches the mod to restore source by using scripts instead of statuses. Enabled by default if Divinity Unleashed is detected.<br><br>Current Status: <b>[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]</b>"
+                                                   "value" : "Enable if the skills don't restore source-points. Enabling switches the mod to restore source by using scripts instead of statuses.<br>Current Status: <b>[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]</b>"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -1546,7 +1549,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h2188a43eg7f94g4c14ga8eagba337710b6fa",
                                                    "type" : 28,
                                                    "value" : "Chose Config Option"
                                                 },
@@ -1747,9 +1750,9 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h322e8975g5d90g4eb7gbee5g3ec82c919bb1",
                                                    "type" : 28,
-                                                   "value" : "<b>[Toggle Mutual Cooldown]</b>"
+                                                   "value" : "<b>[Toggle Mutual Cooldown]</b> When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well. <b>[Requires Script Extender]</b>"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -2029,7 +2032,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h14a1532dgd917g4b9egbfb3gc4c7cb6f7677",
                                                    "type" : 28,
                                                    "value" : "Go Back."
                                                 },
@@ -2231,7 +2234,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h7c38290egff35g48a0g921ag405642e9f417",
                                                    "type" : 28,
                                                    "value" : "<b>[Disable]</b>"
                                                 },
@@ -2342,7 +2345,7 @@
                                                    }
                                                 ],
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h0d3310eeg2031g465aga1f8g0054b943a7ad",
                                                    "type" : 28,
                                                    "value" : "Mutual Cooldown Status: [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]"
                                                 },
@@ -2536,7 +2539,7 @@
          },
          "editorData" : {
             "needLayout" : {"type" : 19, "value" : 0},
-            "nextNodeId" : {"type" : 5, "value" : 233}
+            "nextNodeId" : {"type" : 5, "value" : 241}
          }
       }
    }
