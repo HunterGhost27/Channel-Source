@@ -2,14 +2,18 @@
 
 ----------
 
-## [1.1.2.0] --- 19th August 2020 --- **_Finalize Update_**
+## [1.2.0.0] --- 19th August 2020 --- **_Finalize Update_**
 
 ### CHANGED
 
 * **Mutual Cooldowns**are now _enabled_ by default. - I like the mod better this way.
 * **Mutual Cooldowns** code is only read if the players have the script-extender installed.
 
-## [1.1.1.0] --- 15th June 2020 --- **Skill Configure**
+### REMOVED
+
+* _Removed_ `S7_Config` as project dependancy.
+
+## [1.1.2.0] --- 15th June 2020 --- **Skill Configure**
 
 ### NEW
 
