@@ -4,6 +4,10 @@
 
 ## [1.2.0.0] --- 20th August 2020 --- **_Finalize Update_**
 
+### NEW
+
+* Players can set the `S7_CS_DONTBOTHERME` flag if they do not wish to receive the Changelog and Update letter whenever the mod updates.
+
 ### CHANGED
 
 * **Mutual Cooldowns**are now _enabled_ by default. - I like the mod better this way.

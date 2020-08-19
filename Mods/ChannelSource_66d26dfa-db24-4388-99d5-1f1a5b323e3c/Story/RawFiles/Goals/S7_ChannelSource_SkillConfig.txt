@@ -2,7 +2,7 @@ Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
 //  =============================================================================================================================================
-//  |                                                             SKILL-CONFIGURATOR                                                            |
+//  |                                                             SKILL-CONFIG                                                                  |
 //  =============================================================================================================================================
 
 //  =================================================================================================================
@@ -68,11 +68,17 @@ IF
 GlobalFlagSet("S7_CS_MutualCooldown")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907", "Enabled.");
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("S7_ChannelSource:Osiris:ModMenu] --- Mutual Cooldowns Activated.");
+*/
 
 IF
 GlobalFlagCleared("S7_CS_MutualCooldown")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907", "Disabled.");
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("S7_ChannelSource:Osiris:ModMenu] --- Mutual Cooldowns Deactivated.");
+*/
 
 //  ==========================
 //REGION  MUTUAL-COOLDOWN
