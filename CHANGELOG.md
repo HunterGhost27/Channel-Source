@@ -2,6 +2,12 @@
 
 ----------
 
+## [1.1.2.0] --- 19th August 2020 --- **_Finalize Update_**
+
+### CHANGED
+
+* **Mutual Cooldowns**are now _enabled_ by default. - I like the mod better this way.
+
 ## [1.1.1.0] --- 15th June 2020 --- **Skill Configure**
 
 ### NEW
