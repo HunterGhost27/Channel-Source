@@ -52,7 +52,7 @@ NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Disabled.");
 /* [OSITOOLS_ONLY]
 
 IF
-NRD_OnStatusAttempt(_Character, _ChannelSourceStatus, _StatusHandle, _)             //  On Channel-Source Status Attempt                                             //  Master Toggle Enabled
+NRD_OnStatusAttempt(_Character, _ChannelSourceStatus, _StatusHandle, _)             //  On Channel-Source Status Attempt
 AND
 GlobalGetFlag("S7_ChannelSource_DUBA_Enabled", 1)                                   //  Check if DUBA Flag is set
 AND

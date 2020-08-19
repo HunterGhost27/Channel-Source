@@ -18,6 +18,10 @@ INITSECTION
 
 KBSECTION
 
+//  ===================================
+//  Check whether Extender is installed
+//  ===================================
+
 /* [OSITOOLS_ONLY]
 IF
 GameStarted(_, _)

@@ -10,7 +10,7 @@ INITSECTION
     DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
 //  =================================================================================================================
 
-//  =============================================================================================================================================
+//  =================================================================================================================
 //  DB_S7_ChannelSource_SkillConfig((STRING)_SKILLNAME);
     DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_I");
     DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_II");
@@ -26,7 +26,7 @@ INITSECTION
     DB_S7_ChannelSource_AttributeConfig("Magic Cost");
     DB_S7_ChannelSource_AttributeConfig("Autocast");
     DB_S7_ChannelSource_AttributeConfig("IgnoreSilence");
-//  ==============================================================================================================================================
+//  =================================================================================================================
 
 //  ====    Mutual Cooldowns Enabled By Default  ====
 GlobalSetFlag("S7_CS_MutualCooldown");  // <<<DEFAULT
@@ -40,6 +40,8 @@ KBSECTION
 
 IF
 GameStarted(_, _)                                                                                                       //  If GameStarted
+AND
+GlobalGetFlag("S7_ConfigActive", 1)                                                                                     //  If Stats-Configurator is active
 AND
 NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")    //  Mod not registered to StatsConfigurator
 THEN
@@ -75,12 +77,14 @@ DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b07
 //  ==========================
 //REGION  MUTUAL-COOLDOWN
 
+/* [OSITOOLS_ONLY]
+
 IF
 CharacterUsedSkill(_Character, _SkillCast, _, _)                                        //  If character used a channel-source skill.
 AND
 GlobalGetFlag("S7_CS_MutualCooldown", 1)                                                //  And Mutual-Cooldown option is enabled.
 AND
-DB_IsPlayer(_Character)
+DB_IsPlayer(_Character)                                                                 //  Fetch Character.
 AND
 DB_S7_ChannelSource_SkillConfig(_SkillCast)                                             //  Fetch Skillnames from DB.
 THEN
@@ -110,6 +114,8 @@ DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldown
 THEN
 NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                             //  Puts all remaining skills in cooldown.
 NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");   //  Clears DB
+
+*/
 
 //END_REGION
 //  ==========================

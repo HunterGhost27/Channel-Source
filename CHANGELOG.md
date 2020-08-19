@@ -7,6 +7,7 @@
 ### CHANGED
 
 * **Mutual Cooldowns**are now _enabled_ by default. - I like the mod better this way.
+* **Mutual Cooldowns** code is only read if the players have the script-extender installed.
 
 ## [1.1.1.0] --- 15th June 2020 --- **Skill Configure**
 
