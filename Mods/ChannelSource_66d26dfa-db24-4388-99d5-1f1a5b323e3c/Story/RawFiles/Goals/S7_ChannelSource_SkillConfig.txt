@@ -7,7 +7,7 @@ INITSECTION
 
 //  =================================================================================================================
 //  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
-//  DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
+    DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
 //  =================================================================================================================
 
 //  =============================================================================================================================================
@@ -35,11 +35,11 @@ KBSECTION
 //  ======================
 
 IF
-GameStarted(_, _)                                                       //  If GameStarted
+GameStarted(_, _)                                                                                                       //  If GameStarted
 AND
-NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")   //  Mod not registered to StatsConfigurator
+NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")    //  Mod not registered to StatsConfigurator
 THEN
-DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");      //  Register Mod
+DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");       //  Register Mod
 
 IF
 GlobalFlagSet("S7_ConfigActive")                                                //  If StatsConfigurator is active
