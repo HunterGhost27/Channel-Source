@@ -42,7 +42,9 @@ THEN
 DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");       //  Register Mod
 
 IF
-GlobalFlagSet("S7_ConfigActive")                                                //  If StatsConfigurator is active
+GameStarted(_, _)                                                               //  Game-Started
+AND
+GlobalGetFlag("S7_ConfigActive", 1)                                             //  If StatsConfigurator is active
 AND
 DB_S7_ChannelSource_SkillConfig(_SkillName)                                     //  Fetch SkillNames
 AND

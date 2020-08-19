@@ -18,6 +18,15 @@ INITSECTION
 
 KBSECTION
 
+/* [OSITOOLS_ONLY]
+IF
+GameStarted(_, _)
+AND
+GlobalGetFlag("S7_CS_ExtenderAvailable", 0)
+THEN
+GlobalSetFlag("S7_CS_ExtenderAvailable");
+*/
+
 //=============================
 //REGION  START MOD-MENU DIALOG
 
