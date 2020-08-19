@@ -2,7 +2,7 @@
 
 ----------
 
-## [1.2.0.0] --- 19th August 2020 --- **_Finalize Update_**
+## [1.2.0.0] --- 20th August 2020 --- **_Finalize Update_**
 
 ### CHANGED
 

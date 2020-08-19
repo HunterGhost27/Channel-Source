@@ -28,9 +28,9 @@ INITSECTION
     DB_S7_ChannelSource_AttributeConfig("IgnoreSilence");
 //  =================================================================================================================
 
-//  ====    Mutual Cooldowns Enabled By Default  ====
-GlobalSetFlag("S7_CS_MutualCooldown");  // <<<DEFAULT
-//  =================================================
+//  ====    Mutual Cooldowns Enabled By Default       ====
+GlobalSetFlag("S7_CS_MutualCooldown");      //  <<<DEFAULT
+//  ======================================================
 
 KBSECTION
 

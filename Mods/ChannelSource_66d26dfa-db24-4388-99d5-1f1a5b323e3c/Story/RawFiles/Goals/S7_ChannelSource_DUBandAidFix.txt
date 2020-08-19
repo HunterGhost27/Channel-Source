@@ -30,7 +30,7 @@ THEN
 GlobalClearFlag("S7_ChannelSource_DUBA_Disabled");          //  Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Enabled");    //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Enabled.");
+NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Enabled.");
 */
 
 //  _________________________________________
@@ -43,7 +43,7 @@ THEN
 GlobalClearFlag("S7_ChannelSource_DUBA_Enabled");           // Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Disabled");   //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource - DUBA] --- Status: Disabled.");
+NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Disabled.");
 */ 
 
 //END_REGION
