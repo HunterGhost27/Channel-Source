@@ -46,7 +46,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "he43234a2g7740g407ega7c3gf7afa017f934",
                                                    "type" : 28,
                                                    "value" : "[Toggle Notification] Disable Changelog and Update letter on mod updates."
                                                 },
@@ -62,7 +62,17 @@
                         "Tags" : [ {} ],
                         "UUID" : {"type" : 22, "value" : "0f2b2433-cedc-46b3-a4b4-84f22242c1b0"},
                         "addressedspeaker" : {"type" : 4, "value" : -1},
-                        "checkflags" : [ {} ],
+                        "checkflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "S7_CS_DONTBOTHERME"},"value" : {"type" : 19, "value" : 0}}
+                                    ],"type" : {"type" : 22, "value" : "Global"}}
+                              ]
+                           }
+                        ],
                         "children" : [
                            {
                               "child" : [
@@ -555,7 +565,7 @@
                                                 "TagText" : {
                                                    "handle" : "h969e2d3cg4e50g4cc0g8657g9e38ec6224f8",
                                                    "type" : 28,
-                                                   "value" : "<b>[Toggle Scripted Source-gain Mode]</b> Enabling switches the mod to restore source by using scripts instead of statuses."
+                                                   "value" : "<b>[Toggle Scripted Source-Gain]</b> Enabling switches the mod to restore source using scripts instead of statuses."
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -1169,7 +1179,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "hc6e8756egd33dg48c4g81abg5b7ce1850b9d",
                                                    "type" : 28,
                                                    "value" : "Please Wait."
                                                 },
@@ -1361,12 +1371,15 @@
                                                    },
                                                    {
                                                       "DialogVariables" : {"type" : 22, "value" : "a2da2866-73d9-4907-95d6-35f262321ca3"}
+                                                   },
+                                                   {
+                                                      "DialogVariables" : {"type" : 22, "value" : "123fc0f0-032f-4f72-a0f5-a3fc8673c27f"}
                                                    }
                                                 ],
                                                 "TagText" : {
                                                    "handle" : "h956fe7f4g8c6ag4e3cgb394gf73f5131c25d",
                                                    "type" : 28,
-                                                   "value" : "The book imprints the following indecipherable information in your mind:<br><b>Mod Identifier:</b> [CSModID_d30774ed-d944-4296-8b64-e8bca65acb23]<br><b>Installed On:</b> [InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388]<br><b>Compatibility Script:</b> [DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]"
+                                                   "value" : "The book imprints the following indecipherable information in your mind:<br><b>Mod Identifier:</b> [CSModID_d30774ed-d944-4296-8b64-e8bca65acb23]<br><b>Installed On:</b> [InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388]<br><b>Compatibility Script:</b> [DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]<br><b>Notifications</b>: [DontBotherMeWithNotifications_123fc0f0-032f-4f72-a0f5-a3fc8673c27f]"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -2280,7 +2293,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h678b05e6g75f3g449fgb166gc5475375f87b",
                                                    "type" : 28,
                                                    "value" : "Please Wait."
                                                 },
@@ -2588,7 +2601,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h5cd048a3gb4a3g41b4g8c47g9e1a1eb172a7",
                                                    "type" : 28,
                                                    "value" : "<b>[Toggle Notifications] </b>Enable to recieve the Changelog and Update letter whenever the mod updates."
                                                 },
@@ -2604,7 +2617,17 @@
                         "Tags" : [ {} ],
                         "UUID" : {"type" : 22, "value" : "8038775c-ee71-4c57-9972-0e9d7d3191e9"},
                         "addressedspeaker" : {"type" : 4, "value" : -1},
-                        "checkflags" : [ {} ],
+                        "checkflags" : [
+                           {
+                              "flaggroup" : [
+                                 {
+                                    "flag" : [
+                                       {
+                                          "name" : {"type" : 22, "value" : "S7_CS_DONTBOTHERME"},"value" : {"type" : 19, "value" : 1}}
+                                    ],"type" : {"type" : 22, "value" : "Global"}}
+                              ]
+                           }
+                        ],
                         "children" : [
                            {
                               "child" : [
@@ -2694,7 +2717,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h6b72656ag9839g4894gb8aeg6c8b400379e2",
                                                    "type" : 28,
                                                    "value" : "<b>[Done]</b>"
                                                 },
@@ -3216,7 +3239,7 @@
                                                 "TagText" : {
                                                    "handle" : "he34b0dd0ge513g441agab20g5b28c4885d77",
                                                    "type" : 28,
-                                                   "value" : "Coming Soon (TM)"
+                                                   "value" : "Coming Soon (TM)."
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -3310,7 +3333,7 @@
                                           "TagText" : [
                                              {
                                                 "TagText" : {
-                                                   "handle" : "ls::TranslatedStringRepository::s_HandleUnknown",
+                                                   "handle" : "h9d8a7eb0g26a5g4eecga11ag2c93720cd982",
                                                    "type" : 28,
                                                    "value" : "Please Wait."
                                                 },
@@ -4043,7 +4066,7 @@
                                                 "TagText" : {
                                                    "handle" : "h0d3310eeg2031g465aga1f8g0054b943a7ad",
                                                    "type" : 28,
-                                                   "value" : "Mutual Cooldown Status: [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]"
+                                                   "value" : "When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well.<br>Mutual Cooldown Status<b>: [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]</b>"
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -4235,7 +4258,7 @@
          },
          "editorData" : {
             "needLayout" : {"type" : 19, "value" : 0},
-            "nextNodeId" : {"type" : 5, "value" : 278}
+            "nextNodeId" : {"type" : 5, "value" : 290}
          }
       }
    }
