@@ -48,7 +48,7 @@
                                                 "TagText" : {
                                                    "handle" : "he43234a2g7740g407ega7c3gf7afa017f934",
                                                    "type" : 28,
-                                                   "value" : "[Toggle Notification] Disable Changelog and Update letter on mod updates."
+                                                   "value" : "<b>[Toggle Notification]</b> Disable Changelog and Update letter on mod updates."
                                                 },
                                                 "stub" : {"type" : 19, "value" : 1}
                                              }
@@ -4258,7 +4258,7 @@
          },
          "editorData" : {
             "needLayout" : {"type" : 19, "value" : 0},
-            "nextNodeId" : {"type" : 5, "value" : 290}
+            "nextNodeId" : {"type" : 5, "value" : 294}
          }
       }
    }

@@ -20,7 +20,7 @@
                     <attribute id="type" value="FixedString" type="23" />
                 </node>
                 <node id="DialogVariable">
-                    <attribute id="DefaultValue" value="Disabled" type="23" />
+                    <attribute id="DefaultValue" value="Enabled" type="23" />
                     <attribute id="Description" value="" type="23" />
                     <attribute id="UUID" value="123fc0f0-032f-4f72-a0f5-a3fc8673c27f" type="31" />
                     <attribute id="name" value="DontBotherMeWithNotifications" type="22" />

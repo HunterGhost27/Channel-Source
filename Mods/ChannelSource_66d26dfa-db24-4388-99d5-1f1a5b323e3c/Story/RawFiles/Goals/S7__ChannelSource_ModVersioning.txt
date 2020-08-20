@@ -90,6 +90,15 @@ NRD_DebugLog(_LogPlayerLog);
 //====================
 //REGION UPDATER
 
+//  ________________________________________________________________________
+//  FUNCTION --- Enable Mutual-Cooldowns for people updating mid-playthrough
+//  ************************************************************************
+
+PROC
+Proc_S7_ChannelSource_Updater()
+THEN
+GlobalSetFlag("S7_CS_MutualCooldown");
+
 //  _____________________________________________________________________
 //  FUNCTION --- Swaps old skills with new ones for future compatibility.
 //  *********************************************************************
