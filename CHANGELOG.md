@@ -7,6 +7,7 @@
 ### NEW
 
 * Players can set the `S7_CS_DONTBOTHERME` flag if they do not wish to receive the Changelog and Update letter whenever the mod updates.
+* _Created_ Github release.
 
 ### CHANGED
 

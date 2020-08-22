@@ -9,7 +9,7 @@
 ## Releases
 
 * ***[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2028696492)***
-* ***[Github](https://github.com/Shresht7/ChannelSource)***
+* ***[Github](https://github.com/Shresht7/Channel-Source/releases)***
 
 ## Requirements
 
