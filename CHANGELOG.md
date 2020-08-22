@@ -15,13 +15,13 @@
 
 ### REMOVED
 
-* _Removed_ `S7_Config` as project dependancy.
+* _Removed_ `S7_Config` as project dependency.
 
 ## [1.1.2.0] --- 15th June 2020 --- **Skill Configure**
 
 ### NEW
 
-* _Added_ `S7_Config` as project dependancy. Temporarily.
+* _Added_ `S7_Config` as project dependency. Temporarily.
 * _Registered_ mod to `S7_Config`.
 
 ## [1.1.1.0] --- 16th May 2020 --- **_Mutual Cooldowns_**
