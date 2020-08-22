@@ -9,7 +9,6 @@
 ## Releases
 
 * ***[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2028696492)***
-* ~~***[Nexus Mods](#Nexus)***~~
 * ***[Github](https://github.com/Shresht7/ChannelSource)***
 
 ## Requirements
