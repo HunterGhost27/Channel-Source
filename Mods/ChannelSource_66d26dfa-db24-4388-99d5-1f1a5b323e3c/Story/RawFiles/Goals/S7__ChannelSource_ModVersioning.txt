@@ -3,7 +3,7 @@ SubGoalCombiner SGC_AND
 INITSECTION
 
 //  ==================================    MOD VERSION (NAME, CURRENT VERSION)    ========================================
-//  DB_S7_ModIdentifier("S7_ChannelSource", "1.2.0.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
+//  DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
 //  =====================================================================================================================
 
 //  =====================================================================================================================
@@ -30,14 +30,14 @@ KBSECTION
 IF
 GameStarted(_, _)
 AND
-NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.2.0.0")              //  Latest-Version does not exist.
+NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0")              //  Latest-Version does not exist.
 THEN
 Proc_S7_ChannelSource_Updater();                                    //  Run Update Procedure.
 GlobalSetFlag("S7_CS_CHANGELOG");                                   //  Request CHANGELOG.
-DB_S7_ModIdentifier("S7_ChannelSource", "1.2.0.0");                 //  Add the latest version in the DB.
-DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.2.0.0");
+DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0");                 //  Add the latest version in the DB.
+DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.2.1.0");
 /* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Mod Updated to Version: 1.2.0.0");
+NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Mod Updated to Version: 1.2.1.0");
 */
 
 //====================
@@ -52,8 +52,8 @@ GlobalFlagSet("S7_CS_CHANGELOG")                                    //  CHANGELO
 AND
 GlobalGetFlag("S7_CS_DONTBOTHERME", 0)                              //  If the player wants to be bothered by notifications. 
 THEN
-Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls procedure.
 GlobalClearFlag("S7_CS_CHANGELOG");                                 //  Clears flag.
+Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls procedure.
 
 PROC
 Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
@@ -118,8 +118,8 @@ StringConcatenate(_TempStr, " Swapped with ", _TempStr2)
 AND
 StringConcatenate(_TempStr2, _Skill2Add, _LogSwappedSkill)
 THEN
-CharacterAddSkill(_Character, _Skill2Add);                              //  Adds new-skills.
 CharacterRemoveSkill(_Character, _Skill2Remove);                        //  Removes Old-skills.
+CharacterAddSkill(_Character, _Skill2Add, 1);                           //  Adds new-skills.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog(_LogSwappedSkill);
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Skills swapped for better naming conventions.");
@@ -163,7 +163,7 @@ Proc_S7_ChannelSource_Updater()
 AND
 DB_S7_ModIdentifier("S7_ChannelSource", _ModVersion)                    //  Gets all facts from ModIdentifier for Channel-Source.
 AND
-_ModVersion != "1.2.0.0"                                                //  Filters the latest fact out, if it exists. - it shouldn't though
+_ModVersion != "1.2.1.0"                                                //  Filters the latest fact out, if it exists. - it shouldn't though
 THEN
 NOT DB_S7_ModIdentifier("S7_ChannelSource", _ModVersion);               //  Removes all older facts from DB.
 

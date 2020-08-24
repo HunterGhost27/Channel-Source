@@ -81,8 +81,8 @@ GlobalFlagSet("S7_ChannelSource_GiveMeBooks")                               //  
 AND
 DB_IsPlayer(_Character)
 THEN
-Proc_S7_ChannelSource_GiveMeBooks(_Character);
 GlobalClearFlag("S7_ChannelSource_GiveMeBooks");                            //  Clears the flag.
+Proc_S7_ChannelSource_GiveMeBooks(_Character);
 
 PROC
 Proc_S7_ChannelSource_GiveMeBooks((CHARACTERGUID)_Character)
@@ -130,6 +130,10 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Player learned Channel-Sourc
 //=============================
 //REGION   MISCELLANEOUS
 
+//  =============================
+//      FLAGS AND DIALOG-VARS
+//  =============================
+
 IF
 GlobalFlagSet("S7_CS_ModAddedTo_NewGame")
 THEN
@@ -149,6 +153,45 @@ IF
 GlobalFlagCleared("S7_CS_DONTBOTHERME")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DontBotherMeWithNotifications_123fc0f0-032f-4f72-a0f5-a3fc8673c27f", "Enabled");  //  Notifications Enabled
+
+//  ================
+//      CLEAN-UP
+//  ================
+
+IF
+GlobalFlagSet("S7_CS_CLEANUP")                                                  //  Mod-Menu calls for clean-up
+THEN
+GlobalClearFlag("S7_CS_CLEANUP");
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Clean-up initiated.");
+*/
+Proc_S7_CS_CleanUp();                                                           //  Proc Cleanup
+
+PROC
+Proc_S7_CS_CleanUp()                                                            //  Proc definition
+THEN
+SysClear("DB_S7_ChannelSource_ScriptEnabled", 1);                               //  Remove old-database
+
+PROC
+Proc_S7_CS_CleanUp()                                                            //  Proc definition
+AND
+DB_S7_ChannelSource_Updater_Rename(_SkillName, _, _)                            //  Fetch Old-SkillName
+AND
+DB_IsPlayer(_Character)                                                         //  Fetch Characters
+AND
+CharacterHasSkill(_Character, _SkillName, 1)                                    //  Check if Characters have Old-Skills
+THEN
+CharacterRemoveSkill(_Character, _SkillName);                                   //  Remove old-skills
+Proc_S7_CS_SubstituteSkill(_Character, _SkillName);                             //  Proc substitution
+
+PROC
+Proc_S7_CS_SubstituteSkill((CHARACTERGUID)_Character, (STRING)_SkillName)       //  Definition
+AND
+DB_S7_ChannelSource_Updater_Rename(_SkillName, _NewSkillName, _)                //  Fetch corresponding new-skillnames                                             
+AND
+CharacterHasSkill(_Character, _NewSkillName, 0)                                 //  Character doesn't already have the new skills
+THEN
+CharacterAddSkill(_Character, _NewSkillName, 1);                                //  Swap old-skills with new ones
 
 //END_REGION
 //=============================

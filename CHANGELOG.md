@@ -2,6 +2,16 @@
 
 ----------
 
+## [1.2.1.0] --- 24th August 2020 --- **_CleanUp Diagnostic_**
+
+### NEW
+
+* _Created_ a **Cleanup** dialog option. Removes unused stuff.
+
+### CHANGED
+
+* Flags clear before proc execution. Minor script sequencing changes.
+
 ## [1.2.0.0] --- 20th August 2020 --- **_Finalize Update_**
 
 ### NEW
