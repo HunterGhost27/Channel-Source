@@ -7,6 +7,7 @@
 ### NEW
 
 * _Created_ a **Cleanup** dialog option. Removes unused stuff.
+* _Added_ clean-up warnings for old skills.
 
 ### CHANGED
 
