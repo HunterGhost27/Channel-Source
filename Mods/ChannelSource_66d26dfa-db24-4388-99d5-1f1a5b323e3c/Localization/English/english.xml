@@ -43,7 +43,9 @@
 	<content contentuid="h2188a43eg7f94g4c14ga8eagba337710b6fa" Source="S7_ChannelSource_ModMenu.lsj">Chose configuration option:&lt;br&gt;Mutual Cooldowns:&lt;b&gt; [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]&lt;/b&gt;&lt;br&gt;Compatibility-Script: &lt;b&gt;[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]&lt;/b&gt;</content>
 	<content contentuid="h5cd048a3gb4a3g41b4g8c47g9e1a1eb172a7" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Notifications] &lt;/b&gt;Enable to recieve the Changelog and Update letter whenever the mod updates.</content>
 	<content contentuid="h6b72656ag9839g4894gb8aeg6c8b400379e2" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Done]&lt;/b&gt;</content>
+	<content contentuid="hdafc8569g0281g4032g9b25g26a50cecd85d" Source="S7_ChannelSource_ModMenu.lsj">Cleanup Completed.</content>
 	<content contentuid="h7a57aeebg66c7g4083g9adcgf9fc7589a1fe" Source="S7_ChannelSource_ModMenu.lsj">Source-Gain Script: &lt;b&gt;Enabled.&lt;/b&gt;</content>
+	<content contentuid="hc5118770g1d1fg442cgb88cg2289c82c3c64" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[CleanUp] &lt;/b&gt;Initiate Clean-up. Removes old references.</content>
 	<content contentuid="h1e3e6892g9439g4585gb753g6f82be9db059" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Diagnostics] &lt;/b&gt;Examine the book.</content>
 	<content contentuid="h322e8975g5d90g4eb7gbee5g3ec82c919bb1" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Mutual Cooldown]&lt;/b&gt; When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well.</content>
 	<content contentuid="h7429e176gdc65g4a9dgba65g85ea1211034e" Source="S7_ChannelSource_ModMenu.lsj">Mutual Cooldowns: &lt;b&gt;Disabled.&lt;/b&gt;</content>
