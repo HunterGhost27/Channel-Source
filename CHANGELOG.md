@@ -12,6 +12,7 @@
 ### CHANGED
 
 * Flags clear before proc execution. Minor script sequencing changes.
+* Mod checks for alteast 1 book instead of only 1.
 
 ## [1.2.0.0] --- 20th August 2020 --- **_Finalize Update_**
 

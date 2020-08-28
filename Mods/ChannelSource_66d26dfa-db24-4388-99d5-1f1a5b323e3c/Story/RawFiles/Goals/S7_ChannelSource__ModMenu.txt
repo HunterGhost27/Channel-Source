@@ -102,7 +102,9 @@ DB_S7_ChannelSource_ModConfig_Books(_TierNo, _CSBook, _)                    //  
 AND
 _TierNo <= _CurrentTierNo                                                   //  Prevents granting skill-books that you can still encounter.
 AND
-NOT ItemTemplateIsInPartyInventory(_Character, _CSBook, 1, 1)               //  Checks whether you already have a copy.
+ItemTemplateIsInPartyInventory(_Character, _CSBook, 1, _Qty)                //  Gets the number of copies of a particular book.
+AND
+NOT _Qty > 0                                                                //  Checks whether you already have atleast 1 copy.
 AND
 StringConcatenate("[S7_ChannelSource:Osiris:ModMenu] --- Book added to player-inventory: ", _CSBook, _LogBook)
 THEN
@@ -171,6 +173,23 @@ PROC
 Proc_S7_CS_CleanUp()                                                            //  Proc definition
 THEN
 SysClear("DB_S7_ChannelSource_ScriptEnabled", 1);                               //  Cleans up an Old-DB - was used to toggle DUBA.
+
+PROC
+Proc_S7_CS_CleanUp()
+AND                                                     
+DB_IsPlayer(_Character)
+AND
+DB_S7_ChannelSource_Updater_Rename(_, _, _CSBook)                               //  Fetches books from the DB.
+AND
+ItemTemplateIsInCharacterInventory(_Character, _CSBook, _Qty)                   //  Checks whether party has old-skillbooks.
+AND
+_Qty > 0                                                                        //  There is atleast one.
+THEN
+ItemTemplateRemoveFromUser(_CSBook, _Character, _Qty);                          //  Removes skillbooks.
+ItemTemplateAddTo(_CSBook, _Character, 1);                                      //  Re-adds skillbooks.
+/* [OSITOOLS_ONLY]
+NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Books re-added to prevent crashes when opening mod-menu.");
+*/
 
 PROC
 Proc_S7_CS_CleanUp()                                                            //  Proc definition

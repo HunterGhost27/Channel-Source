@@ -111,9 +111,11 @@ DB_IsPlayer(_Character)
 AND
 DB_S7_ChannelSource_Updater_Rename(_, _, _CSBook)                       //  Fetches books from the DB.
 AND
-ItemTemplateIsInCharacterInventory(_Character, _CSBook, 1)              //  Checks whether party has old-skillbooks.
+ItemTemplateIsInCharacterInventory(_Character, _CSBook, _Qty)           //  Checks whether party has old-skillbooks.
+AND
+_Qty > 0                                                                //  There is atleast one.
 THEN
-ItemTemplateRemoveFromUser(_CSBook, _Character, 1);                     //  Removes skillbooks.
+ItemTemplateRemoveFromUser(_CSBook, _Character, _Qty);                  //  Removes skillbooks.
 ItemTemplateAddTo(_CSBook, _Character, 1);                              //  Re-adds skillbooks.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Books re-added to prevent crashes when opening mod-menu.");
