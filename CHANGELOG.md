@@ -2,6 +2,12 @@
 
 ----------
 
+## [1.3.0.0] --- 13th January 2021 --- **_Preparing For Next Update_**
+
+### REMOVED
+
+* _Removed_ unnecessary dependencies.
+
 ## [1.2.1.0] --- 24th August 2020 --- **_CleanUp Diagnostic_**
 
 ### NEW
