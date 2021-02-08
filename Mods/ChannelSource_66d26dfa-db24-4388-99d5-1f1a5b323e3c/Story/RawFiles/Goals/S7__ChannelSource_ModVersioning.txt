@@ -6,12 +6,6 @@ INITSECTION
 //  DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
 //  =====================================================================================================================
 
-//  =====================================================================================================================
-//  DB_S7_ChangeLogs((STRING)_ModName,      (STRING)_Type,                                          (ITEMGUID)_ITEMGUID);
-    DB_S7_ChangeLogs("S7_ChannelSource",    "Log",               "S7_CS_CHANGELOG_26c6d621-4a11-4d7b-b875-74173068d64a");
-    DB_S7_ChangeLogs("S7_ChannelSource",    "Note",         "S7_CS_HuntersLeaflet_f3b41fbf-1731-4bb1-9467-145ad8b51bb4");
-//  =====================================================================================================================
-
 //=======================================================================================================================
 //  DB_S7_ChannelSource_Updater_Rename((STRING)_SKILL2REMOVE,        (STRING)_SKILL2ADD,              (STRING)_SKILLBOOK);
     DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_I",      "Shout_S7_CS_ChannelSource_I",   "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69");
@@ -33,59 +27,11 @@ AND
 NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0")              //  Latest-Version does not exist.
 THEN
 Proc_S7_ChannelSource_Updater();                                    //  Run Update Procedure.
-GlobalSetFlag("S7_CS_CHANGELOG");                                   //  Request CHANGELOG.
 DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0");                 //  Add the latest version in the DB.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.2.1.0");
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Mod Updated to Version: 1.2.1.0");
 */
-
-//====================
-//REGION CHANGELOG
-
-//  _____________________________________
-//  FUNCTION ---    AN ACTUAL LOG
-//  *************************************
-
-IF
-GlobalFlagSet("S7_CS_CHANGELOG")                                    //  CHANGELOG requested through update or dialog option.
-AND
-GlobalGetFlag("S7_CS_DONTBOTHERME", 0)                              //  If the player wants to be bothered by notifications. 
-THEN
-GlobalClearFlag("S7_CS_CHANGELOG");                                 //  Clears flag.
-Proc_S7_ChannelSource_ChangelogRequest();                           //  Calls procedure.
-
-PROC
-Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
-AND
-DB_IsPlayer(_Character)
-AND
-DB_S7_ChangeLogs("S7_ChannelSource", _, _LogItem)                   //  Fetches LogItems from DB
-AND
-ItemTemplateIsInPartyInventory(_Character, _LogItem, 1, 1)          //  Character already has CHANGELOG. (old instances for example)
-THEN
-ItemTemplateRemoveFromUser(_LogItem, _Character, 1);                //  Removes old instances of items from player's inventory.
-
-PROC
-Proc_S7_ChannelSource_ChangelogRequest()                            //  Procedure Definition.
-AND
-DB_IsPlayer(_Character)     
-AND
-DB_S7_ChangeLogs("S7_ChannelSource", _ItemType, _LogItem)           //  Gets the Note and Log from the DB.
-AND
-NOT ItemTemplateIsInPartyInventory(_Character, _LogItem, 1, 1)      //  Checks if player doesn't already have those items in inventory
-AND
-StringConcatenate("[S7_ChannelSource:Osiris:ModVersioning] --- ", _ItemType, _TempStr)
-AND
-StringConcatenate(_TempStr, " added to player inventory.", _LogPlayerLog)
-THEN
-ItemTemplateAddTo(_LogItem, _Character, 1);                         //  Adds the Note and Changelog to the player's inventory.
-/* [OSITOOLS_ONLY]
-NRD_DebugLog(_LogPlayerLog);
-*/
-
-//END_REGION
-//====================
 
 //====================
 //REGION UPDATER

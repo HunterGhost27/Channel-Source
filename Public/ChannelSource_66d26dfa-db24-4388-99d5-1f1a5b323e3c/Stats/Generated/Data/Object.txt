@@ -38,11 +38,3 @@ data "Act part" "16"
 data "Value" "15000"
 data "Unique" "1"
 
-new entry "S7_CS_BOOK_HuntersLeaflet"
-type "Object"
-using "_Lorebooks"
-data "RootTemplate" "f3b41fbf-1731-4bb1-9467-145ad8b51bb4"
-data "Act part" "1"
-data "Value" "1"
-data "Unique" "1"
-

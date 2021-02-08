@@ -146,16 +146,6 @@ GlobalFlagSet("S7_CS_ModAddedTo_ExistingSave")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "Existing-Save");
 
-IF
-GlobalFlagSet("S7_CS_DONTBOTHERME")
-THEN
-DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DontBotherMeWithNotifications_123fc0f0-032f-4f72-a0f5-a3fc8673c27f", "Disabled"); //  Notifications Disabled
-
-IF
-GlobalFlagCleared("S7_CS_DONTBOTHERME")
-THEN
-DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DontBotherMeWithNotifications_123fc0f0-032f-4f72-a0f5-a3fc8673c27f", "Enabled");  //  Notifications Enabled
-
 //  ================
 //      CLEAN-UP
 //  ================

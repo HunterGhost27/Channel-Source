@@ -80,7 +80,7 @@ DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "S7CSMutualCooldown_b07
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Mutual Cooldowns Deactivated.");
 */
 
-//  ==========================
+//  =====================
 //REGION  MUTUAL-COOLDOWN
 
 /* [OSITOOLS_ONLY]
@@ -124,7 +124,7 @@ NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCool
 */
 
 //END_REGION
-//  ==========================
+//  =====================
 
 EXITSECTION
 

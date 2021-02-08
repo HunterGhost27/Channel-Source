@@ -51,15 +51,5 @@
         <field name="RootTemplate" type="RootTemplateStatObjectFieldDefinition" value="8651743f-c1e8-43c1-809f-12c738f74571" />
       </fields>
     </stat_object>
-    <stat_object is_substat="false">
-      <fields>
-        <field name="Name" type="NameStatObjectFieldDefinition" value="S7_CS_BOOK_HuntersLeaflet" />
-        <field name="Using" type="BaseClassStatObjectFieldDefinition" value="_Lorebooks" />
-        <field name="RootTemplate" type="RootTemplateStatObjectFieldDefinition" value="f3b41fbf-1731-4bb1-9467-145ad8b51bb4" />
-        <field name="Act part" type="EnumerationStatObjectFieldDefinition" value="1" enumeration_type_name="ActPart" />
-        <field name="Value" type="IntegerStatObjectFieldDefinition" value="1" />
-        <field name="Unique" type="IntegerStatObjectFieldDefinition" value="1" />
-      </fields>
-    </stat_object>
   </stat_objects>
 </stats>
