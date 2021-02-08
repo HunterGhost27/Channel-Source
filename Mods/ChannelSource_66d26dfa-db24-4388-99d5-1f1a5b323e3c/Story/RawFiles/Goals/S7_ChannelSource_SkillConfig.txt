@@ -5,6 +5,7 @@ INITSECTION
 //  |                                                             SKILL-CONFIG                                                                  |
 //  =============================================================================================================================================
 
+/*
 //  =================================================================================================================
 //  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
     DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
@@ -27,38 +28,13 @@ INITSECTION
     DB_S7_ChannelSource_AttributeConfig("Autocast");
     DB_S7_ChannelSource_AttributeConfig("IgnoreSilence");
 //  =================================================================================================================
+*/
 
 //  ======= Mutual Cooldowns Enabled By Default ==========
-GlobalSetFlag("S7_CS_MutualCooldown");      //  <<<DEFAULT
+GlobalSetFlag("S7_CS_MutualCooldown");      // <<< DEFAULT
 //  ======================================================
 
 KBSECTION
-
-//  ======================
-//      REGISTER MOD
-//  ======================
-
-IF
-GameStarted(_, _)                                                                                                       //  If GameStarted
-AND
-GlobalGetFlag("S7_ConfigActive", 1)                                                                                     //  If Stats-Configurator is active
-AND
-NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")    //  Mod not registered to StatsConfigurator
-THEN
-DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");       //  Register Mod
-
-IF
-GameStarted(_, _)                                                               //  Game-Started
-AND
-GlobalGetFlag("S7_ConfigActive", 1)                                             //  If StatsConfigurator is active
-AND
-DB_S7_ChannelSource_SkillConfig(_SkillName)                                     //  Fetch SkillNames
-AND
-DB_S7_ChannelSource_AttributeConfig(_AttributeName)                             //  Fetch AttributeNames
-AND
-NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)   //  If DB entry does not exist
-THEN
-DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);      //  Create DB entry
 
 //  ======================
 //          TOGGLES
@@ -125,6 +101,35 @@ NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCool
 
 //END_REGION
 //  =====================
+
+/*  RIP Skill-Config-Menu.
+//  ======================
+//      REGISTER MOD
+//  ======================
+
+IF
+GameStarted(_, _)                                                                                                       //  If GameStarted
+AND
+GlobalGetFlag("S7_ConfigActive", 1)                                                                                     //  If Stats-Configurator is active
+AND
+NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")    //  Mod not registered to StatsConfigurator
+THEN
+DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");       //  Register Mod
+
+IF
+GameStarted(_, _)                                                               //  Game-Started
+AND
+GlobalGetFlag("S7_ConfigActive", 1)                                             //  If StatsConfigurator is active
+AND
+DB_S7_ChannelSource_SkillConfig(_SkillName)                                     //  Fetch SkillNames
+AND
+DB_S7_ChannelSource_AttributeConfig(_AttributeName)                             //  Fetch AttributeNames
+AND
+NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)   //  If DB entry does not exist
+THEN
+DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);      //  Create DB entry
+*/
+
 
 EXITSECTION
 

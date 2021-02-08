@@ -15,7 +15,6 @@
 	<content contentuid="h48082259g66d7g4ed2gb799gc3b9542c0621" Source="BOOK_Skill_Source_SiphonSource_I">The Art of Siphoning Source</content>
 	<content contentuid="h64e709deg8eddg4511ga727gc16d8d78a826" Source="BOOK_Skill_Source_SiphonSource_I">The Art of Siphoning Source</content>
 	<content contentuid="hc5702bf3g03eag4977g87e6g6f966200eb9f" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Add Missing Books]&lt;/b&gt; You feel that your understanding is incomplete. There must be something you missed.</content>
-	<content contentuid="h087e5455gf2d2g4dadg9b00g24cc53276f9b" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Configure Stats]&lt;/b&gt; Coming Soon (TM)</content>
 	<content contentuid="h5a23289ag5a58g421ag9426g8b82daf790f7" Source="S7_ChannelSource_ModMenu.lsj">As you inspect the book, it begins to glow and crackle with &quot;source&quot;. Contrary to your initial observations, it is revealed to be written in an anomalous language you can&apos;t recognize but can still comprehend. The same language that defines the rules of our universe perhaps. The book, it seems, is a modification of those rules, and grants you a certain degree of control.</content>
 	<content contentuid="h969e2d3cg4e50g4cc0g8657g9e38ec6224f8" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Scripted Source-Gain]&lt;/b&gt; Enabling switches the mod to restore source using scripts instead of statuses.</content>
 	<content contentuid="h4c13e485gcf9dg48eegb69egce48ad568f16" Source="S7_ChannelSource_ModMenu.lsj">Source-Gain Script: &lt;b&gt;[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]&lt;/b&gt;</content>
@@ -41,7 +40,6 @@
 	<content contentuid="h1e3e6892g9439g4585gb753g6f82be9db059" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Diagnostics] &lt;/b&gt;Examine the book.</content>
 	<content contentuid="h322e8975g5d90g4eb7gbee5g3ec82c919bb1" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Mutual Cooldown]&lt;/b&gt; When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well.</content>
 	<content contentuid="h7429e176gdc65g4a9dgba65g85ea1211034e" Source="S7_ChannelSource_ModMenu.lsj">Mutual Cooldowns: &lt;b&gt;Disabled.&lt;/b&gt;</content>
-	<content contentuid="he34b0dd0ge513g441agab20g5b28c4885d77" Source="S7_ChannelSource_ModMenu.lsj">Coming Soon (TM).</content>
 	<content contentuid="hc82db4deg36cdg46e8g863bg70a1492a43d9" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Enable]&lt;/b&gt;</content>
 	<content contentuid="he2248709gc74cg4df4g8a09g2717634c7dfd" Source="S7_ChannelSource_ModMenu.lsj">Mutual Cooldowns: &lt;b&gt;Enabled.&lt;/b&gt;</content>
 	<content contentuid="h14a1532dgd917g4b9egbfb3gc4c7cb6f7677" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Go Back]&lt;/b&gt;</content>
