@@ -147,26 +147,6 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Player learned Channel-Sourc
 //END_REGION
 //=============================
 
-//=============================
-//REGION   MISCELLANEOUS
-
-//  =============================
-//      FLAGS AND DIALOG-VARS
-//  =============================
-
-IF
-GlobalFlagSet("S7_CS_ModAddedTo_NewGame")
-THEN
-DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "New-Game");
-
-IF
-GlobalFlagSet("S7_CS_ModAddedTo_ExistingSave")
-THEN
-DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "Existing-Save");
-
-//END_REGION
-//=============================
-
 EXITSECTION
 
 ENDEXITSECTION

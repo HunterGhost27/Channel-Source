@@ -22,9 +22,7 @@
 	<content contentuid="h7e613a12g6bdcg4ed5gae8ega779ea131b02" Source="S7_ChannelSource_ModMenu.lsj">In an act of inexplicable communication, the book awaits a response, ready to manifest your will.</content>
 	<content contentuid="haa1ac635g8e4bg418eg9815g6d79d20860d6" Source="S7_ChannelSource_ModMenu.lsj">Source-Gain Script: &lt;b&gt;Disabled.&lt;/b&gt;</content>
 	<content contentuid="h262de481gdfc8g441dga8aage81823070787" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Enable]&lt;/b&gt;</content>
-	<content contentuid="hc6e8756egd33dg48c4g81abg5b7ce1850b9d" Source="S7_ChannelSource_ModMenu.lsj">Please Wait.</content>
 	<content contentuid="h399f438fgf9dag43f1ga035g17b46a59966b" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;Close&lt;/b&gt; the book.</content>
-	<content contentuid="h956fe7f4g8c6ag4e3cgb394gf73f5131c25d" Source="S7_ChannelSource_ModMenu.lsj">The book imprints the following indecipherable information in your mind:&lt;br&gt;&lt;b&gt;Mod Identifier:&lt;/b&gt; [CSModID_d30774ed-d944-4296-8b64-e8bca65acb23]&lt;br&gt;&lt;b&gt;Installed On:&lt;/b&gt; [InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388]&lt;br&gt;&lt;b&gt;Compatibility Script:&lt;/b&gt; [DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]</content>
 	<content contentuid="hee896e01g6920g4cb5g9d62g8690abf503b5" Source="S7_ChannelSource_ModMenu.lsj">Please install Norbyte&apos;s script-extender to access skill-configuration options.</content>
 	<content contentuid="h5c9a8b07g2649g49dagaee1g12aa985186cd" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Done]&lt;/b&gt;</content>
 	<content contentuid="hb5a823f3gcfc5g4947ga695g828e2ef51314" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Skill Configuration]&lt;/b&gt; Attempt to change the behaviour of the skills.</content>
@@ -33,11 +31,7 @@
 	<content contentuid="h48a35d6fg2959g4ea1gbd7bg86d8630925ed" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Skill Configuration]&lt;/b&gt; [&lt;b&gt;Requires Script-Extender&lt;/b&gt;]</content>
 	<content contentuid="h258d5d3bg5813g4d72g8a58g530d5dd5b26a" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Go Back]&lt;/b&gt;</content>
 	<content contentuid="h2188a43eg7f94g4c14ga8eagba337710b6fa" Source="S7_ChannelSource_ModMenu.lsj">Chose configuration option:&lt;br&gt;Mutual Cooldowns:&lt;b&gt; [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]&lt;/b&gt;&lt;br&gt;Compatibility-Script: &lt;b&gt;[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]&lt;/b&gt;</content>
-	<content contentuid="h6b72656ag9839g4894gb8aeg6c8b400379e2" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Done]&lt;/b&gt;</content>
-	<content contentuid="hdafc8569g0281g4032g9b25g26a50cecd85d" Source="S7_ChannelSource_ModMenu.lsj">Cleanup Completed.</content>
 	<content contentuid="h7a57aeebg66c7g4083g9adcgf9fc7589a1fe" Source="S7_ChannelSource_ModMenu.lsj">Source-Gain Script: &lt;b&gt;Enabled.&lt;/b&gt;</content>
-	<content contentuid="hc5118770g1d1fg442cgb88cg2289c82c3c64" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[CleanUp] &lt;/b&gt;Initiate Clean-up. Removes old references.</content>
-	<content contentuid="h1e3e6892g9439g4585gb753g6f82be9db059" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Diagnostics] &lt;/b&gt;Examine the book.</content>
 	<content contentuid="h322e8975g5d90g4eb7gbee5g3ec82c919bb1" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Mutual Cooldown]&lt;/b&gt; When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well.</content>
 	<content contentuid="h7429e176gdc65g4a9dgba65g85ea1211034e" Source="S7_ChannelSource_ModMenu.lsj">Mutual Cooldowns: &lt;b&gt;Disabled.&lt;/b&gt;</content>
 	<content contentuid="hc82db4deg36cdg46e8g863bg70a1492a43d9" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Enable]&lt;/b&gt;</content>
@@ -77,12 +71,6 @@
 	<content contentuid="he035385cg379ag45d5g8e23gda83eaf1a9e0" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_II_StatsDescription">Restore: 2 Source-Points.</content>
 	<content contentuid="h9c1c8e73g5a12g4a1fgbbbegc3036e6cf20d" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_III_StatsDescription">Restore: 3 Source-Points.</content>
 	<content contentuid="h8069c0bdg45adg443egb4acg9ae582d6c765" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_IV_StatsDescription">Restore: 3 Source-Points.</content>
-	<content contentuid="h82035dc4gcf34g432cga8a3g5762e7035086" Source="Status_HEAL_Description.lsb" Key="S7_ChannelSource_GAINED_SOURCE_I_Description">Restore 1 Source Point.</content>
-	<content contentuid="h37c4d6dfgae31g4332g9c83g1ae7496ea704" Source="Status_HEAL_Description.lsb" Key="S7_ChannelSource_GAINED_SOURCE_II_Description">Restore 2 Source Point.</content>
-	<content contentuid="h4098ab81g39beg439fga1efg762da87d0e7c" Source="Status_HEAL_Description.lsb" Key="S7_ChannelSource_GAINED_SOURCE_III_Description">Restore 3 Source Points.</content>
-	<content contentuid="h9bacc631ga5abg4c72gb029g632ef27001e5" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_I_DisplayName">Source Infused - I</content>
-	<content contentuid="h1ab64d52gc216g421fgaf43g9faa247b2f94" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_II_DisplayName">Source Infused - II</content>
-	<content contentuid="h807d2225g9802g4905gaadeg463f731dd105" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_III_DisplayName">Source Infused - III</content>
 	<content contentuid="h85910390g7a62g4265g8820g8d6b8da768f4" Source="Target_Description.lsb" Key="Target_S7_CS_SiphonSource_I_Description">Transfer &lt;font color=&apos;#008080&apos;&gt;Source&lt;/font&gt; to the desired target.</content>
 	<content contentuid="h11948793gedd4g479dg9987g953b2ce7834b" Source="Target_Description.lsb" Key="Target_SiphonSource_I_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
 	<content contentuid="h9e08ab3fg407ag4a2cgbd2bg5543c13430f1" Source="Target_DisplayName.lsb" Key="Target_S7_CS_SiphonSource_I_DisplayName">Siphon Source</content>

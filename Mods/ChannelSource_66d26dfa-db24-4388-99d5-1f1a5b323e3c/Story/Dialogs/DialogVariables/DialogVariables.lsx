@@ -20,13 +20,6 @@
                     <attribute id="type" value="FixedString" type="23" />
                 </node>
                 <node id="DialogVariable">
-                    <attribute id="DefaultValue" value="Existing-Save" type="23" />
-                    <attribute id="Description" value="The game-state the mod was installed on" type="23" />
-                    <attribute id="UUID" value="cb99b60e-de2b-47f7-acd0-9a4ce882a388" type="31" />
-                    <attribute id="name" value="InstalledOn" type="22" />
-                    <attribute id="type" value="FixedString" type="23" />
-                </node>
-                <node id="DialogVariable">
                     <attribute id="DefaultValue" value="Disabled." type="23" />
                     <attribute id="Description" value="Mutual-Cooldown Status" type="23" />
                     <attribute id="UUID" value="b0787502-bf55-467b-b935-14f0c08c1907" type="31" />

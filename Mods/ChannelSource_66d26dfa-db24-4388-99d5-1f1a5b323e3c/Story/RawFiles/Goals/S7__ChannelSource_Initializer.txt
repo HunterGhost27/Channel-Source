@@ -15,7 +15,6 @@ KBSECTION
 IF
 GameEventSet("GAMEEVENT_GameStarted")
 THEN
-GlobalSetFlag("S7_CS_ModAddedTo_NewGame");
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:Initializer] --- Parent Goal Initialized. Mod added to a new game.");
 */
@@ -30,7 +29,6 @@ SavegameLoaded(_, _, _, _)
 AND
 DB_StoryStarted(_)
 THEN
-GlobalSetFlag("S7_CS_ModAddedTo_ExistingSave");
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:Initializer] --- Parent Goal Initialized. Story was already initialized. Mod added to an existing save-file.");
 */
