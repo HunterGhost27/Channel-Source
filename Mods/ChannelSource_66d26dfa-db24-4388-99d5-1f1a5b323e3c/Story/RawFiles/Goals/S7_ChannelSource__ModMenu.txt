@@ -41,13 +41,16 @@ GlobalSetFlag("S7_CS_ExtenderAvailable");
 IF                                      
 ItemTemplateCombinedWithItemTemplate("TOOL_IdentifyingGlass_A_32288ce4-3d8d-46b3-a655-598350a96201", _CSBook, _, _, _, _Character, _)  
 AND
-DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                          //  Fetches book names from the DB.       
+DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                              //  Fetches book names from the DB.       
 AND
 DB_IsPlayer(_Character)                                        
 AND
-QRY_SpeakerIsAvailable(_Character)                                          //  Checks whether player can have a dialog.
+QRY_SpeakerIsAvailable(_Character)                                              //  Checks whether player can have a dialog.
+AND
+PlayLoopEffect(_Character, "RS3_FX_GP_Status_SourceInfused_01", "", _SourceFX)  //  Start SourceFX
 THEN
-Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
+DB_S7_CS_SourceFX(_SourceFX);                                                   //  Store SourceFX handle
+Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 */
@@ -59,16 +62,31 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 IF                                      
 ItemTemplateCombinedWithItemTemplate(_CSBook,"TOOL_IdentifyingGlass_A_32288ce4-3d8d-46b3-a655-598350a96201" , _, _, _, _Character, _)  
 AND
-DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                          //  Fetches book names from the DB.       
+DB_S7_ChannelSource_ModConfig_Books(_, _CSBook, _)                              //  Fetches book names from the DB.       
 AND
 DB_IsPlayer(_Character)                                        
 AND
-QRY_SpeakerIsAvailable(_Character)                                          //  Checks whether player can have a dialog.
+QRY_SpeakerIsAvailable(_Character)                                              //  Checks whether player can have a dialog.
+AND
+PlayLoopEffect(_Character, "RS3_FX_GP_Status_SourceInfused_01", "", _SourceFX)  //  Start SourceFX
 THEN
-Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                //  Starts the Mod-Menu dialog.
+DB_S7_CS_SourceFX(_SourceFX);                                                   //  Store SourceFX handle
+Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 */
+
+//  --------------
+//  Clear SourceFX
+//  **************
+
+IF
+DialogEnded("S7_ChannelSource_ModMenu", _)  //  When Dialog Ends
+AND
+DB_S7_CS_SourceFX(_SourceFX)                //  Fetch SourceFX handles
+THEN
+StopLoopEffect(_SourceFX);                  //  Stop FX
+NOT DB_S7_CS_SourceFX(_SourceFX);           //  Clear DB
 
 //END_REGION
 //=============================
