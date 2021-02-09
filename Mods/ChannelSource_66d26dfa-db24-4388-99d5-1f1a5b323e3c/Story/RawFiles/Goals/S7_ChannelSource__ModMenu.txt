@@ -50,7 +50,7 @@ AND
 PlayLoopEffect(_Character, "RS3_FX_GP_Status_SourceInfused_01", "", _SourceFX)  //  Start SourceFX
 THEN
 DB_S7_CS_SourceFX(_SourceFX);                                                   //  Store SourceFX handle
-Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
+Proc_StartDialog(0, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 */
@@ -71,7 +71,7 @@ AND
 PlayLoopEffect(_Character, "RS3_FX_GP_Status_SourceInfused_01", "", _SourceFX)  //  Start SourceFX
 THEN
 DB_S7_CS_SourceFX(_SourceFX);                                                   //  Store SourceFX handle
-Proc_StartDialog(1, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
+Proc_StartDialog(0, "S7_ChannelSource_ModMenu", _Character);                    //  Starts the Mod-Menu dialog.
 /* [OSITOOLS_ONLY] 
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 */
