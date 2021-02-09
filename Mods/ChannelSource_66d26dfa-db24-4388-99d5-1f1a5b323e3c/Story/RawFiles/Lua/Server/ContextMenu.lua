@@ -8,6 +8,9 @@ Ext.RegisterNetListener('S7UCL::ContextMenu', function (channel, payload)
 
     Ext.Print(payload.actionID)
     if payload.actionID == 27201 then
-        Osi.Proc_StartDialog(1, 'S7_ChannelSource_ModMenu', Osi.CharacterGetHostCharacter())
+        local character = payload.CharacterGUID
+        local sourceFX = Osi.PlayLoopEffect(character, "RS3_FX_GP_Status_SourceInfused_01", "")
+        Osi.DB_S7_CS_SourceFX(sourceFX)
+        Osi.Proc_StartDialog(0, 'S7_ChannelSource_ModMenu', character)
     end
 end)
