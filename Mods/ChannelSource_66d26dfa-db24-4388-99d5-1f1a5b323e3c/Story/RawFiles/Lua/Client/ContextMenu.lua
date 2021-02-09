@@ -15,11 +15,46 @@ Ext.RegisterListener('SessionLoaded', function() -- UCL has been loaded by this 
                 {
                     ['actionID'] = 27201,
                     ['clickSound'] = true,
-                    ['text'] = Color:Source("Mod-Menu"),
+                    ['text'] = Color:Source("Mod Menu"),
+                    ['isDisabled'] = false,
+                    ['isLegal'] = true
+                },
+                {
+                    ['actionID'] = 27202,
+                    ['clickSound'] = true,
+                    ['text'] = Color:Blue("Mod Manual"),
                     ['isDisabled'] = false,
                     ['isLegal'] = true
                 }
             }
         })
+    end
+end)
+
+--  MOD-MANUAL
+--  ==========
+
+Ext.RegisterNetListener('S7UCL::ContextMenu', function (channel, payload)
+    local payload = Ext.JsonParse(payload) or {}
+    Destringify(payload)
+
+    if payload.actionID == 27202 then
+        local manual = LoadFile('Mods/ChannelSource_66d26dfa-db24-4388-99d5-1f1a5b323e3c/ModInformation.md', 'data')
+
+        --  Replacers table
+        local replacers = {
+            {['?ModVersion'] = Version:Parse(MODINFO.Version):String()},
+            {['?ModAuthor'] = MODINFO.Author},
+            {['?ModDescription'] = MODINFO.Description},
+        }
+
+        local specs = UCL.Journalify(manual, replacers) -- Parse ModInformation.md into Journal Specification
+        specs = Integrate(specs, {
+            ['GMJournal'] = {
+                ['Component'] = {['Name'] = 'S7_ConfigCtxMenu'},
+                ['SubComponent'] = {['ToggleEditButton'] = {['Visible'] = false}}
+            }
+        })
+        UCL.Render(specs) -- Render Journal on-screen
     end
 end)
