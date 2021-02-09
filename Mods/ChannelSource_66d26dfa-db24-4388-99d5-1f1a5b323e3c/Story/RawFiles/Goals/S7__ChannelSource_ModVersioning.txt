@@ -6,15 +6,6 @@ INITSECTION
 //  DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0"); //  When changing Mod-Version, replace all occurrences. (Ctrl+F2) 
 //  =====================================================================================================================
 
-//=======================================================================================================================
-//  DB_S7_ChannelSource_Updater_Rename((STRING)_SKILL2REMOVE,        (STRING)_SKILL2ADD,              (STRING)_SKILLBOOK);
-    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_I",      "Shout_S7_CS_ChannelSource_I",   "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69");
-    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_II",     "Shout_S7_CS_ChannelSource_II",  "BOOK_Skill_Source_ChannelSource_II_4cb15e3d-24e5-481c-98b8-9305a6019578");
-    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_III",    "Shout_S7_CS_ChannelSource_III", "BOOK_Skill_Source_ChannelSource_III_a5ca77fd-9fc0-4ac4-beba-48f41d338bf3");
-    DB_S7_ChannelSource_Updater_Rename("Shout_ChannelSource_IV",     "Shout_S7_CS_ChannelSource_IV",  "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f");
-    DB_S7_ChannelSource_Updater_Rename("Target_SiphonSource_I",      "Target_S7_CS_SiphonSource_I",   "BOOK_Skill_Source_SiphonSource_I_8651743f-c1e8-43c1-809f-12c738f74571");
-//=======================================================================================================================
-
 KBSECTION
 
 //  ==================
@@ -24,10 +15,10 @@ KBSECTION
 IF
 GameStarted(_, _)
 AND
-NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0")              //  Latest-Version does not exist.
+NOT DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0")                  //  Latest-Version does not exist.
 THEN
-Proc_S7_ChannelSource_Updater();                                    //  Run Update Procedure.
-DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0");                 //  Add the latest version in the DB.
+Proc_S7_ChannelSource_Updater();                                        //  Run Update Procedure.
+DB_S7_ModIdentifier("S7_ChannelSource", "1.2.1.0");                     //  Add the latest version in the DB.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "CSModID_d30774ed-d944-4296-8b64-e8bca65acb23", "S7_ChannelSource, 1.2.1.0");
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Mod Updated to Version: 1.2.1.0");
@@ -36,40 +27,9 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Mod Updated to Version
 //====================
 //REGION UPDATER
 
-//  ________________________________________________________________________
-//  FUNCTION --- Enable Mutual-Cooldowns for people updating mid-playthrough
-//  ************************************************************************
-
-PROC
-Proc_S7_ChannelSource_Updater()
-THEN
-GlobalSetFlag("S7_CS_MutualCooldown");
-GlobalSetFlag("S7_CS_CLEANUP");
-
-//  _____________________________________________________________________________________________
-//  FUNCTION --- Removes and Re-adds skillbooks to player inventory in an attempt to cull crashes.
-//  *********************************************************************************************
-
-PROC
-Proc_S7_ChannelSource_Updater()                                 
-AND                                                     
-DB_IsPlayer(_Character)
-AND
-DB_S7_ChannelSource_Updater_Rename(_, _, _CSBook)                       //  Fetches books from the DB.
-AND
-ItemTemplateIsInCharacterInventory(_Character, _CSBook, _Qty)           //  Checks whether party has old-skillbooks.
-AND
-_Qty > 0                                                                //  There is atleast one.
-THEN
-ItemTemplateRemoveFromUser(_CSBook, _Character, _Qty);                  //  Removes skillbooks.
-ItemTemplateAddTo(_CSBook, _Character, 1);                              //  Re-adds skillbooks.
-/* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModVersioning] --- Books re-added to prevent crashes when opening mod-menu.");
-*/
-
-//  __________________________________________________
-//  FUNCTION ---       Clears Mod-Identifier
-//  **************************************************
+//  __________________________________
+//  FUNCTION --- Clears Mod-Identifier
+//  **********************************
 
 PROC    
 Proc_S7_ChannelSource_Updater()                             

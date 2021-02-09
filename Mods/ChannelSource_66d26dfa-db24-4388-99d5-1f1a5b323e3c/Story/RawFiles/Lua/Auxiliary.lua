@@ -17,6 +17,24 @@ Ext.Require('AuxFunctions/Index.lua')
 --==============================================================
 ----------------------------------------------------------------
 
+--  =====================
+--  START MOD-MENU DIALOG
+--  =====================
+
+---Starts CS Mod-Menu Dialog
+---@param character string CharacterGUID
+function StartModMenuDialog(character)
+    local character = character or Osi.CharacterGetHostCharacter()
+    if not IsValid(Osi.QRY_SpeakerIsAvailable(character)) then return end
+    local sourceFX = Osi.PlayLoopEffect(character, "RS3_FX_GP_Status_SourceInfused_01", "")
+    Osi.DB_S7_CS_SourceFX(sourceFX)
+    Osi.Proc_StartDialog(0, "S7_ChannelSource_ModMenu", character)
+end
+
+--  ======
+--  VARDEC
+--  ======
+
 ChannelSourceSkillbooks = {
     ["ChannelSource_SKILLBOOK_Source_ChannelSource_I"] = "79e78c16-3e86-4206-b22a-57a8f3081b69",
     ["ChannelSource_SKILLBOOK_Source_ChannelSource_II"] = "4cb15e3d-24e5-481c-98b8-9305a6019578",

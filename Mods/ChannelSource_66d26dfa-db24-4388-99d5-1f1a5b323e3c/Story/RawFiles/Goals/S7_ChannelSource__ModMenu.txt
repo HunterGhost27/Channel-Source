@@ -1,20 +1,20 @@
 Version 1
 SubGoalCombiner SGC_AND
 INITSECTION
-//  ====================================================================================================================================
-//  |                                                           MOD-MENU                                                               |
-//  ====================================================================================================================================
+//  ================================================================================================================================================
+//  |                                                                   MOD-MENU                                                                   |
+//  ================================================================================================================================================
 
-//============================================================================================================================================
-//  DB_S7_ChannelSource_ModConfig_Books((INTEGER)_TierNo,  (STRING)_ItemTemplate,                                               (STRING)_LOCATION)
-    DB_S7_ChannelSource_ModConfig_Books(1,     "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69",        "RC_Main");
-    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_ChannelSource_II_4cb15e3d-24e5-481c-98b8-9305a6019578",       "CoS_Main");
-    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_SiphonSource_I_8651743f-c1e8-43c1-809f-12c738f74571",         "CoS_Main");
-    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_III_a5ca77fd-9fc0-4ac4-beba-48f41d338bf3",      "ARX_Main");
-    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "ARX_Main");
-    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "ChannelSource_Blank");
-    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",       "_TMPL_Sandbox");
-//============================================================================================================================================
+//==================================================================================================================================================
+//  DB_S7_ChannelSource_ModConfig_Books((INTEGER)_TierNo,  (STRING)_ItemTemplate,                                                 (STRING)_LOCATION)
+    DB_S7_ChannelSource_ModConfig_Books(1,     "BOOK_Skill_Source_ChannelSource_I_79e78c16-3e86-4206-b22a-57a8f3081b69",                 "RC_Main");
+    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_ChannelSource_II_4cb15e3d-24e5-481c-98b8-9305a6019578",               "CoS_Main");
+    DB_S7_ChannelSource_ModConfig_Books(2,     "BOOK_Skill_Source_SiphonSource_I_8651743f-c1e8-43c1-809f-12c738f74571",                 "CoS_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_III_a5ca77fd-9fc0-4ac4-beba-48f41d338bf3",              "ARX_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",               "ARX_Main");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",    "ChannelSource_Blank");
+    DB_S7_ChannelSource_ModConfig_Books(3,     "BOOK_Skill_Source_ChannelSource_IV_1fa7c5c5-e8c3-4188-b7ec-3fea1fbcfb7f",          "_TMPL_Sandbox");
+//==================================================================================================================================================
 
 KBSECTION
 
@@ -81,12 +81,12 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Activated.");
 //  **************
 
 IF
-DialogEnded("S7_ChannelSource_ModMenu", _)  //  When Dialog Ends
+DialogEnded("S7_ChannelSource_ModMenu", _)                                      //  When Dialog Ends
 AND
-DB_S7_CS_SourceFX(_SourceFX)                //  Fetch SourceFX handles
+DB_S7_CS_SourceFX(_SourceFX)                                                    //  Fetch SourceFX handles
 THEN
-StopLoopEffect(_SourceFX);                  //  Stop FX
-NOT DB_S7_CS_SourceFX(_SourceFX);           //  Clear DB
+StopLoopEffect(_SourceFX);                                                      //  Stop FX
+NOT DB_S7_CS_SourceFX(_SourceFX);                                               //  Clear DB
 
 //END_REGION
 //=============================
@@ -163,68 +163,6 @@ IF
 GlobalFlagSet("S7_CS_ModAddedTo_ExistingSave")
 THEN
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "InstalledOn_cb99b60e-de2b-47f7-acd0-9a4ce882a388", "Existing-Save");
-
-//  ================
-//      CLEAN-UP
-//  ================
-
-IF
-GlobalFlagSet("S7_CS_CLEANUP")                                                  //  Mod-Menu calls for clean-up
-THEN
-GlobalClearFlag("S7_CS_CLEANUP");
-/* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Clean-up initiated.");
-*/
-Proc_S7_CS_CleanUp();                                                           //  Proc Cleanup
-
-PROC
-Proc_S7_CS_CleanUp()                                                            //  Proc definition
-THEN
-SysClear("DB_S7_ChannelSource_ScriptEnabled", 1);                               //  Cleans up an Old-DB - was used to toggle DUBA.
-
-PROC
-Proc_S7_CS_CleanUp()
-AND                                                     
-DB_IsPlayer(_Character)
-AND
-DB_S7_ChannelSource_Updater_Rename(_, _, _CSBook)                               //  Fetches books from the DB.
-AND
-ItemTemplateIsInCharacterInventory(_Character, _CSBook, _Qty)                   //  Checks whether party has old-skillbooks.
-AND
-_Qty > 0                                                                        //  There is atleast one.
-THEN
-ItemTemplateRemoveFromUser(_CSBook, _Character, _Qty);                          //  Removes skillbooks.
-ItemTemplateAddTo(_CSBook, _Character, 1);                                      //  Re-adds skillbooks.
-/* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Books re-added to prevent crashes when opening mod-menu.");
-*/
-
-PROC
-Proc_S7_CS_CleanUp()                                                            //  Proc definition
-AND
-DB_S7_ChannelSource_Updater_Rename(_SkillName, _, _)                            //  Fetch Old-SkillName
-AND
-DB_IsPlayer(_Character)                                                         //  Fetch Characters
-AND
-CharacterHasSkill(_Character, _SkillName, 1)                                    //  Check if Characters have Old-Skills
-THEN
-CharacterRemoveSkill(_Character, _SkillName);                                   //  Remove old-skills
-/* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Old skills removed.");
-*/
-Proc_S7_CS_SubstituteSkill(_Character, _SkillName);                             //  Proc substitution
-
-PROC
-Proc_S7_CS_SubstituteSkill((CHARACTERGUID)_Character, (STRING)_SkillName)       //  Definition
-AND
-DB_S7_ChannelSource_Updater_Rename(_SkillName, _NewSkillName, _)                //  Fetch corresponding new-skillnames                                             
-AND
-CharacterHasSkill(_Character, _NewSkillName, 0)                                 //  Character doesn't already have the new skills
-THEN
-CharacterAddSkill(_Character, _NewSkillName, 1);                                //  Swap old-skills with new ones
-/* [OSITOOLS_ONLY]
-NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- New skills added.");
-*/
 
 //END_REGION
 //=============================
