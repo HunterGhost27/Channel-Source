@@ -47,7 +47,7 @@ ConsoleCommander:Register({
     ['Name'] = 'ProcUpdater',
     ['Description'] = "Rerun Updater Procedure",
     ['Context'] = 'Server',
-    ['Aciton'] = function ()
+    ['Action'] = function ()
         if not Ext.OsirisIsCallable() then Debug:Warn('Osiris Inaccessible') return end
         Osi.Proc_S7_ChannelSource_Updater()
     end
