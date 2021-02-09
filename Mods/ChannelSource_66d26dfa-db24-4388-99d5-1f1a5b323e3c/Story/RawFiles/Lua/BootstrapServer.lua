@@ -3,6 +3,7 @@
 --  =======
 
 Ext.Require('Auxiliary.lua')
+Ext.Require('Server/FlagsManager.lua')
 
 --  UI-COMPONENTS-LIBRARY INTEGRATION
 --  =================================
