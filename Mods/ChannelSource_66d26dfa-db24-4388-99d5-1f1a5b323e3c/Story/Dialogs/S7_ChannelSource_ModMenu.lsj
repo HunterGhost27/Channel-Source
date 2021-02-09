@@ -501,7 +501,7 @@
                                  {
                                     "flag" : [
                                        {
-                                          "name" : {"type" : 22, "value" : "S7_ChannelSource_DUBA_Disabled"},"value" : {"type" : 19, "value" : 1}}
+                                          "name" : {"type" : 22, "value" : "S7_ChannelSource_DUBA"},"value" : {"type" : 19, "value" : 0}}
                                     ],"type" : {"type" : 22, "value" : "Global"}}
                               ]
                            }
@@ -2148,7 +2148,7 @@
                                  {
                                     "flag" : [
                                        {
-                                          "name" : {"type" : 22, "value" : "S7_ChannelSource_DUBA_Enabled"},"value" : {"type" : 19, "value" : 1}}
+                                          "name" : {"type" : 22, "value" : "S7_ChannelSource_DUBA"},"value" : {"type" : 19, "value" : 1}}
                                     ],"type" : {"type" : 22, "value" : "Global"}}
                               ]
                            }
@@ -2725,7 +2725,7 @@
          },
          "editorData" : {
             "needLayout" : {"type" : 19, "value" : 0},
-            "nextNodeId" : {"type" : 5, "value" : 319}
+            "nextNodeId" : {"type" : 5, "value" : 321}
          }
       }
    }

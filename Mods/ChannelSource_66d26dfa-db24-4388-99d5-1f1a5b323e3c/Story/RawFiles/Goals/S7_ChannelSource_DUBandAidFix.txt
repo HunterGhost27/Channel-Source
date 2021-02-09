@@ -12,7 +12,7 @@ INITSECTION
 */
 
 //================================================================================================
-GlobalSetFlag("S7_ChannelSource_DUBA_Disabled");   //  <<<<<<<<<   DEFAULT STATE   <<<<<<<<<<<<<<<
+GlobalSetFlag("S7_ChannelSource_DUBA");            //  <<<<<<<<<   DEFAULT STATE   <<<<<<<<<<<<<<<
 //================================================================================================
 
 KBSECTION
@@ -25,9 +25,8 @@ KBSECTION
 //  *****************************************
 
 IF
-GlobalFlagSet("S7_ChannelSource_DUBA_Enabled")              //  Flag set by dialog option.
+GlobalFlagSet("S7_ChannelSource_DUBA")                      //  Flag set by dialog option.
 THEN
-GlobalClearFlag("S7_ChannelSource_DUBA_Disabled");          //  Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Enabled");    //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Enabled.");
@@ -38,9 +37,8 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Enabled.");
 //  *****************************************
 
 IF
-GlobalFlagSet("S7_ChannelSource_DUBA_Disabled")             // Flag set by dialog option.
+GlobalFlagCleared("S7_ChannelSource_DUBA")                  // Flag set by dialog option.
 THEN
-GlobalClearFlag("S7_ChannelSource_DUBA_Enabled");           // Remove mutually exclusive flag.
 DialogSetVariableFixedString("S7_ChannelSource_ModMenu", "DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3", "Disabled");   //  Sets dialog variable.
 /* [OSITOOLS_ONLY]
 NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Disabled.");
@@ -54,7 +52,7 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:DUBA] --- Status: Disabled.");
 IF
 NRD_OnStatusAttempt(_Character, _ChannelSourceStatus, _StatusHandle, _)             //  On Channel-Source Status Attempt
 AND
-GlobalGetFlag("S7_ChannelSource_DUBA_Enabled", 1)                                   //  Check if DUBA Flag is set
+GlobalGetFlag("S7_ChannelSource_DUBA", 1)                                           //  Check if DUBA Flag is set
 AND
 DB_S7_ChannelSource_DUBA(_ChannelSourceStatus, _ChannelSourceAddSourcePoints)       //  Get the amount of SP restoration for said status
 THEN
