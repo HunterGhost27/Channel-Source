@@ -26,9 +26,9 @@ KBSECTION
 IF
 GameStarted(_, _)
 AND
-GlobalGetFlag("S7_CS_ExtenderAvailable", 0)
+GlobalGetFlag("S7_ExtenderAvailable", 0)
 THEN
-GlobalSetFlag("S7_CS_ExtenderAvailable");
+GlobalSetFlag("S7_ExtenderAvailable");
 */
 
 //=============================
