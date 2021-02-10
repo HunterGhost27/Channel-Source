@@ -1,4 +1,4 @@
-# Channel Source
+# `Channel Source`
 
 =====================
 
@@ -6,7 +6,7 @@
 
 ### Channel Source
 
-- ***Mod Version***: _?ModVersion_
+- ***Mod Version***: `?ModVersion`
 - ***Author***: ?ModAuthor
 - ***Description***: ?ModDescription
 
