@@ -2,17 +2,23 @@
 
 ---
 
-## [1.3.0.0] --- 13th January 2021 --- **_Preparing For Next Update_**
+## [1.3.0.0] --- 10th Februrary 2021 --- **_Modernization_**
 
 ### NEW
 
 - Partial Luaification.
 - Added Console-Commands.
+- Integrated with UI-Components-Library.
+- Add ContextMenu option for Mod Menu.
+- Add ContextMenu option for Mod Manual.
+- Added FX when character is in Mod-Menu dialog.
 
 ### REMOVED
 
 - _Removed_ unnecessary dependencies.
 - _Removed_ old stuff.
+- _Removed_ old CHANGELOG system in favor of Mod-Manual.
+- _Removed_ unimplemented skill-config-menu.
 
 ## [1.2.1.0] --- 24th August 2020 --- **_CleanUp Diagnostic_**
 

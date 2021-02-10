@@ -1,0 +1,35 @@
+[b][i]Channel Source[/i][/b] adds new skills that allow the player to [i]regenerate[/i] [b]source[/b] by expending [b]action-points[/b]. This is different from other source-regen mods as these skills can be used in [b]combat[/b].
+
+[h1]Releases[/h1]
+[list]
+[*][b][i][url=https://github.com/Shresht7/Channel-Source/releases]Github[/url][/i][/b]
+[/list]
+[h1]Requirements[/h1]
+[list]
+[*][b][i][url=https://github.com/Norbyte/ositools]Script-Extender[/url]: soft-requirement.[/i][/b]
+[/list]
+
+[h1]Features[/h1]
+[list]
+[*]Adds 3 tiers of [i]Channel Source[/i] Skill that regenerates SP at the cost of AP.
+[*][b][i]Channel Source[/i][/b] - grants [b]1SP[/b] at the cost of [b]2AP[/b].Can be found in [b][i]Fort Joy[/i][/b].
+[*][b][i]Channel Source, Greater[/i][/b] - grants [b]2SP[/b] at the cost of [b]3AP[/b]. Can be found in [b][i]Driftwood[/i][/b].
+[*][b][i]Channel Source, Master[/i][/b] - grants [b]3SP[/b] at the cost of [b]4AP[/b]. Can be found in the [b][i]Nameless Isles[/i][/b].
+[*][b][i]Siphon Source[/i][/b] - allows you to transfer [b]1SP[/b] to someone else. Think reverse source-vampirism. Can be found with [i]Channel Source, Greater[/i] - in [b][i]Driftwood[/i][/b].
+[*]Adds another skill similar in effect to the skills listed above, but much more powerful. I'll leave its location a secret.
+[/list]
+[b]NOTE:[/b] [i]Most of these skill-books should not be hard to find and you will come upon them naturally as you progress the storyline. Even the secret skill isn't exactly well hidden. The skill-books, except for the last skill, are not consumable. One is enough for the entire party.[/i]
+
+[list]
+[*][b][i]Mod-Menu[/i][/b] can be accessed by combining any [b]channel-source skillbook[/b] with an [b]identifying-glass[/b]. If you have the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2337228868]UI-Components-Library[/url], you can access the mod-menu by right-clicking any CS-Skillbook and selecting the [b]Mod-Menu[/b] context-menu option.
+
+[*]The [i]Channel-Source[/i] skills have [b]Mutual-Cooldowns[/b]. This means casting a channel-source skill will put all other channel-source skills on cooldown in-tandem. You can disable this feature and switch to individual cooldowns using the mod-menu. (Requires the Script-Extender).
+[/list]
+
+[h1]Thanks and Credits[/h1]
+[list]
+[*][b][url=http://store.steampowered.com/app/435150/Divinity_Original_Sin_2/]Divinity: Original Sin 2[/url][/b], a game by [b][url=http://larian.com/]Larian Studios[/url][/b].
+[*][b]LaughingLeader[/b] for the [b][url=https://github.com/LaughingLeader/SourceControlGenerator]Source Control Generator[/url][/b], which makes life so much easier.
+[*][b]Norbyte[/b] for the all-powerful [b][url=https://github.com/Norbyte/ositools]script-extender[/url][/b].
+[*][b]Sebastian Lenz[/b] and [b]LaughingLeader[/b] for the [b][url=https://marketplace.visualstudio.com/items?itemName=sebastian-lenz.divinity-vscode]VSCode extension[/url][/b].
+[/list]
