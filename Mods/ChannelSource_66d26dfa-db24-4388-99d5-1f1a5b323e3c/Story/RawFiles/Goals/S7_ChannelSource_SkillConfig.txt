@@ -5,30 +5,6 @@ INITSECTION
 //  |                                                             SKILL-CONFIG                                                                  |
 //  =============================================================================================================================================
 
-/*
-//  =================================================================================================================
-//  DB_S7_Config_ModRegistry((STRING)_ModName,      (STRING)_ProjectUUID,                         (STRING)_FlagName);
-    DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");
-//  =================================================================================================================
-
-//  =================================================================================================================
-//  DB_S7_ChannelSource_SkillConfig((STRING)_SKILLNAME);
-    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_I");
-    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_II");
-    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_III");
-    DB_S7_ChannelSource_SkillConfig("Shout_S7_CS_ChannelSource_IV");
-    DB_S7_ChannelSource_SkillConfig("Target_S7_CS_SiphonSource_I");
-//  DB_S7_ChannelSource_AttributeConfig((STRING)_ATTRIBUTENAME);
-    DB_S7_ChannelSource_AttributeConfig("ActionPoints");
-    DB_S7_ChannelSource_AttributeConfig("Cooldown");
-    DB_S7_ChannelSource_AttributeConfig("TargetRadius");
-    DB_S7_ChannelSource_AttributeConfig("AreaRadius");
-    DB_S7_ChannelSource_AttributeConfig("Memory Cost");
-    DB_S7_ChannelSource_AttributeConfig("Magic Cost");
-    DB_S7_ChannelSource_AttributeConfig("Autocast");
-    DB_S7_ChannelSource_AttributeConfig("IgnoreSilence");
-//  =================================================================================================================
-*/
 
 //  ======= Mutual Cooldowns Enabled By Default ==========
 GlobalSetFlag("S7_CS_MutualCooldown");      // <<< DEFAULT
@@ -62,37 +38,37 @@ NRD_DebugLog("[S7_ChannelSource:Osiris:ModMenu] --- Mutual Cooldowns Deactivated
 /* [OSITOOLS_ONLY]
 
 IF
-CharacterUsedSkill(_Character, _SkillCast, _, _)                                        //  If character used a channel-source skill.
+CharacterUsedSkill(_Character, _SkillCast, _, _)                                            //  If character used a channel-source skill.
 AND
-GlobalGetFlag("S7_CS_MutualCooldown", 1)                                                //  And Mutual-Cooldown option is enabled.
+GlobalGetFlag("S7_CS_MutualCooldown", 1)                                                    //  And Mutual-Cooldown option is enabled.
 AND
-DB_IsPlayer(_Character)                                                                 //  Fetch Character.
+DB_IsPlayer(_Character)                                                                     //  Fetch Character.
 AND
-DB_S7_ChannelSource_SkillConfig(_SkillCast)                                             //  Fetch Skillnames from DB.
+DB_S7_ChannelSource_SkillConfig(_SkillCast)                                                 //  Fetch Skillnames from DB.
 THEN
-Proc_S7_ChannelSource_MutualCooldown(_Character, _SkillCast);                           //  Mutual-Cooldowns Procedure call.
+Proc_S7_ChannelSource_MutualCooldown(_Character, _SkillCast);                               //  Mutual-Cooldowns Procedure call.
 
 PROC
-Proc_S7_ChannelSource_MutualCooldown((CHARACTERGUID)_Character, (STRING)_SkillCast)     //  Mutual-Cooldown Procedure definition.
+Proc_S7_ChannelSource_MutualCooldown((CHARACTERGUID)_Character, (STRING)_SkillCast)         //  Mutual-Cooldown Procedure definition.
 AND
-DB_S7_ChannelSource_SkillConfig(_SkillNotCast)                                          //  Fetches all skillnames from DB.
+DB_S7_ChannelSource_SkillConfig(_SkillNotCast)                                              //  Fetches all skillnames from DB.
 AND
-_SkillCast != _SkillNotCast                                                             //  Filters out the skill that was cast. It will be put on cooldown anyway. Probably not necessary.
+_SkillCast != _SkillNotCast                                                                 //  Filters out the skill that was cast. It will be put on cooldown anyway. Probably not necessary.
 AND
-NRD_StatGetInt(_SkillNotCast, "Cooldown", _Cooldown)                                    //  Gets the Cooldown of the remaining skills.
+NRD_StatGetInt(_SkillNotCast, "Cooldown", _Cooldown)                                        //  Gets the Cooldown of the remaining skills.
 AND
-IntegerProduct(_Cooldown, 6, _CooldownInSeconds)                                        //  Converts Number-of-turns to time-in-seconds.
+IntegerProduct(_Cooldown, 6, _CooldownInSeconds)                                            //  Converts Number-of-turns to time-in-seconds.
 AND
-Real(_CooldownInSeconds, _CooldownReal)                                                 //  Casts the value as a real-number instead of integer. cuz osiris.
+Real(_CooldownInSeconds, _CooldownReal)                                                     //  Casts the value as a real-number instead of integer. cuz osiris.
 THEN
-DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");   //  Stores Information in a DB
-NRD_SkillSetCooldown(_Character, _SkillNotCast, 0.0);                                   //  Set all skills off cooldown momentarily
-ProcObjectTimer(_Character, "MutualCooldownUI", 10);                                    //  Start Refresh Timer
+DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");       //  Stores Information in a DB
+NRD_SkillSetCooldown(_Character, _SkillNotCast, 0.0);                                       //  Set all skills off cooldown momentarily
+ProcObjectTimer(_Character, "MutualCooldownUI", 10);                                        //  Start Refresh Timer
 
 PROC
-ProcObjectTimerFinished((CHARACTERGUID)_Character, "MutualCooldownUI")                  //  Timer finished
+ProcObjectTimerFinished((CHARACTERGUID)_Character, "MutualCooldownUI")                      //  Timer finished
 AND
-DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI")    //  Fetches data from DB
+DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI")        //  Fetches data from DB
 THEN
 NRD_SkillSetCooldown(_Character, _SkillNotCast, _CooldownReal);                             //  Puts all remaining skills in cooldown.
 NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCooldownUI");   //  Clears DB
@@ -101,35 +77,6 @@ NOT DB_S7_CooldownUIUpdate(_Character, _SkillNotCast, _CooldownReal, "MutualCool
 
 //END_REGION
 //  =====================
-
-/*  RIP Skill-Config-Menu.
-//  ======================
-//      REGISTER MOD
-//  ======================
-
-IF
-GameStarted(_, _)                                                                                                       //  If GameStarted
-AND
-GlobalGetFlag("S7_ConfigActive", 1)                                                                                     //  If Stats-Configurator is active
-AND
-NOT DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig")    //  Mod not registered to StatsConfigurator
-THEN
-DB_S7_Config_ModRegistry("S7_ChannelSource",    "66d26dfa-db24-4388-99d5-1f1a5b323e3c",     "S7_CS_SkillConfig");       //  Register Mod
-
-IF
-GameStarted(_, _)                                                               //  Game-Started
-AND
-GlobalGetFlag("S7_ConfigActive", 1)                                             //  If StatsConfigurator is active
-AND
-DB_S7_ChannelSource_SkillConfig(_SkillName)                                     //  Fetch SkillNames
-AND
-DB_S7_ChannelSource_AttributeConfig(_AttributeName)                             //  Fetch AttributeNames
-AND
-NOT DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName)   //  If DB entry does not exist
-THEN
-DB_S7_Config_ModInterface("S7_ChannelSource", _SkillName, _AttributeName);      //  Create DB entry
-*/
-
 
 EXITSECTION
 
