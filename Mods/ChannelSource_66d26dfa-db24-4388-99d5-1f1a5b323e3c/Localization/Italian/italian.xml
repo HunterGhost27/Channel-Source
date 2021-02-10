@@ -15,7 +15,7 @@
 	<content contentuid="h48082259g66d7g4ed2gb799gc3b9542c0621" Source="BOOK_Skill_Source_SiphonSource_I">The Art of Siphoning Source</content>
 	<content contentuid="h64e709deg8eddg4511ga727gc16d8d78a826" Source="BOOK_Skill_Source_SiphonSource_I">The Art of Siphoning Source</content>
 	<content contentuid="hc5702bf3g03eag4977g87e6g6f966200eb9f" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Add Missing Books]&lt;/b&gt; You feel that your understanding is incomplete. There must be something you missed.</content>
-	<content contentuid="h5a23289ag5a58g421ag9426g8b82daf790f7" Source="S7_ChannelSource_ModMenu.lsj">As you inspect the book, it begins to glow and crackle with &quot;source&quot;. Contrary to your initial observations, it is revealed to be written in an anomalous language you can&apos;t recognize but can still comprehend. The same language that defines the rules of our universe perhaps. The book, it seems, is a modification of those rules, and grants you a certain degree of control.</content>
+	<content contentuid="h5a23289ag5a58g421ag9426g8b82daf790f7" Source="S7_ChannelSource_ModMenu.lsj">As you inspect the book, it begins to glow and crackle with source. Contrary to your initial observations, it is revealed to be written in an anomalous language you can&apos;t recognize but can still comprehend.</content>
 	<content contentuid="h969e2d3cg4e50g4cc0g8657g9e38ec6224f8" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Toggle Scripted Source-Gain]&lt;/b&gt; Enabling switches the mod to restore source using scripts instead of statuses.</content>
 	<content contentuid="h4c13e485gcf9dg48eegb69egce48ad568f16" Source="S7_ChannelSource_ModMenu.lsj">Source-Gain Script: &lt;b&gt;[DUBAFix_a2da2866-73d9-4907-95d6-35f262321ca3]&lt;/b&gt;</content>
 	<content contentuid="hc3f7a00cg76f6g4921g9952g244cf5e1d819" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Disable]&lt;/b&gt;</content>
@@ -40,41 +40,23 @@
 	<content contentuid="hcd6bb505g0363g40a0g8091gae1defa476f4" Source="S7_ChannelSource_ModMenu.lsj">As you attempt to piece together sporadic knowledge, the book listens. Your wish materializes into the remaining books.</content>
 	<content contentuid="h7c38290egff35g48a0g921ag405642e9f417" Source="S7_ChannelSource_ModMenu.lsj">&lt;b&gt;[Disable]&lt;/b&gt;</content>
 	<content contentuid="h0d3310eeg2031g465aga1f8g0054b943a7ad" Source="S7_ChannelSource_ModMenu.lsj">When enabled, casting a Channel-Source skill will put all other Channel-Source skills on cooldown as well.&lt;br&gt;Mutual Cooldown Status&lt;b&gt;: [S7CSMutualCooldown_b0787502-bf55-467b-b935-14f0c08c1907]&lt;/b&gt;</content>
-	<content contentuid="h3a11b275g8b72g4c4bgafa7g0deea876410c" Source="S7_CS_CHANGELOG">A source-infused log, unlike any livewood you&apos;ve ever seen. Touching it invokes visons and memories of the past - especially events of significant change. This one, in particular, seems related to the Channel-Source books.</content>
-	<content contentuid="h0236d690g86f9g4267g830cg52fc8924f3c1" Source="S7_CS_CHANGELOG">Changelog (Channel-Source)</content>
 	<content contentuid="h8311eb63g89cfg41c1g961cgde31f8d79927" Source="S7_CS_CHANGELOG"></content>
-	<content contentuid="h94e05513g304fg4eecg89f9gaf920978f37d" Source="S7_CS_CHANGELOG">Changelog (Channel-Source)</content>
-	<content contentuid="h5c49e86eg294ag41feg9007g39595004bcb7" Source="S7_CS_HuntersLeaflet">An anonymous letter. The writer claims to be the author of the &quot;Channel-Source&quot; books.</content>
-	<content contentuid="hf82e75aeg087ag4c76g8a27gccc9f9e209ea" Source="S7_CS_HuntersLeaflet">A Hunter&apos;s Note</content>
-	<content contentuid="hf9a1c7bcg2e5cg45ddgbb78g9a840083d90e" Source="S7_CS_HuntersLeaflet">A Hunter&apos;s Note</content>
-	<content contentuid="ha507c8b9g5f97g4a14ga812g434c6c9ca351" Source="Shout_Description.lsb" Key="Shout_ChannelSource_I_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="h19d5315cg1670g48f3g9833g663268c5869e" Source="Shout_Description.lsb" Key="Shout_ChannelSource_II_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="hef01f891gd51bg4fd2gb8e6g2f4c9782bded" Source="Shout_Description.lsb" Key="Shout_ChannelSource_III_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="h0e15f650gc563g4113g83c6g4fb94836d312" Source="Shout_Description.lsb" Key="Shout_ChannelSource_IV_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
 	<content contentuid="h8639f858ge3ceg483agacdag9f07549ce98a" Source="Shout_Description.lsb" Key="Shout_S7_CS_ChannelSource_I_Description">You Channel the Source around you. Gain &lt;font color=&apos;#008080&apos;&gt;1 Source-Point.&lt;/font&gt;</content>
 	<content contentuid="h6bae63dcg7333g4225g9f20g02554bd2eef6" Source="Shout_Description.lsb" Key="Shout_S7_CS_ChannelSource_II_Description">You Channel the Source with greater effect. Gain &lt;font color=&apos;#008080&apos;&gt;2 Source-Points.&lt;/font&gt;</content>
 	<content contentuid="h1735897ag393dg4a7dg9278g215be99dc254" Source="Shout_Description.lsb" Key="Shout_S7_CS_ChannelSource_III_Description">You Channel the Source like a true Godwoken. Gain &lt;font color=&apos;#008080&apos;&gt;3 Source-Points.&lt;/font&gt;</content>
 	<content contentuid="ha6cfa3e7ga485g4c2ag8870g447e22737baf" Source="Shout_Description.lsb" Key="Shout_S7_CS_ChannelSource_IV_Description">You bless the Source down in Rivellon. Everyone in a 7m Radius is &lt;font color=&apos;#FFFFFF&apos;&gt;Blessed&lt;/font&gt; and gains &lt;font color=&apos;#008080&apos;&gt;3 Source-Points.&lt;/font&gt;</content>
-	<content contentuid="hdd281fc6g4476g4bb2g904cgc071b855eb5c" Source="Shout_DisplayName.lsb" Key="Shout_ChannelSource_I_DisplayName">[Old] Channel Source</content>
-	<content contentuid="h65c0235eg4ac9g44a1g844cg6092625eed85" Source="Shout_DisplayName.lsb" Key="Shout_ChannelSource_II_DisplayName">[Old] Channel Source, Greater</content>
-	<content contentuid="h71e7f52dge571g41d3g9e25g79cf5be1b37d" Source="Shout_DisplayName.lsb" Key="Shout_ChannelSource_III_DisplayName">[Old] Channel Source, Master</content>
-	<content contentuid="h61121f1dgf96ag469bg8878gde9c68510ce7" Source="Shout_DisplayName.lsb" Key="Shout_ChannelSource_IV_DisplayName">[Old] Channel Source, Divine</content>
 	<content contentuid="h0a4cbe6fg0b2fg47b6gae92g4f30e1d33eb7" Source="Shout_DisplayName.lsb" Key="Shout_S7_CS_ChannelSource_I_DisplayName">Channel Source</content>
 	<content contentuid="h1bd518e5g2029g41cbga527g98317b9e80e6" Source="Shout_DisplayName.lsb" Key="Shout_S7_CS_ChannelSource_II_DisplayName">Channel Source, Greater</content>
 	<content contentuid="hb3924442g8480g4720g8f09g516d4fd987fb" Source="Shout_DisplayName.lsb" Key="Shout_S7_CS_ChannelSource_III_DisplayName">Channel Source, Master</content>
 	<content contentuid="h2a87d6feg3426g44a6gb6d3ged09cab6635a" Source="Shout_DisplayName.lsb" Key="Shout_S7_CS_ChannelSource_IV_DisplayName">Channel Source, Divine</content>
-	<content contentuid="hc63e5904gcd5dg41d2g97f7g704659c707a6" Source="Shout_StatsDescription.lsb" Key="Shout_ChannelSource_I_StatsDescription">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="h400ef849g4601g49edg902agbdbd39a25149" Source="Shout_StatsDescription.lsb" Key="Shout_ChannelSource_II_StatsDescription">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="hf6a0149eg69e0g4ccfg976ag639a4483815f" Source="Shout_StatsDescription.lsb" Key="Shout_ChannelSource_III_StatsDescription">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
-	<content contentuid="h7b6e1f98g5261g4e1fgb3d4g33a32b84fcc4" Source="Shout_StatsDescription.lsb" Key="Shout_ChannelSource_IV_StatsDescription">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
 	<content contentuid="h20af134ag2d7dg4e2cg9905g7d306fa4bf5e" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_I_StatsDescription">Restore 1 Source Point.</content>
 	<content contentuid="he035385cg379ag45d5g8e23gda83eaf1a9e0" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_II_StatsDescription">Restore: 2 Source-Points.</content>
 	<content contentuid="h9c1c8e73g5a12g4a1fgbbbegc3036e6cf20d" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_III_StatsDescription">Restore: 3 Source-Points.</content>
 	<content contentuid="h8069c0bdg45adg443egb4acg9ae582d6c765" Source="Shout_StatsDescription.lsb" Key="Shout_S7_CS_ChannelSource_IV_StatsDescription">Restore: 3 Source-Points.</content>
+	<content contentuid="h64dd0e02g2fe2g4cbbg8716g8be487f84777" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_I_DisplayName">Source Infused - I</content>
+	<content contentuid="h69a8c24cg8ea0g4c59gbd16gfb196fc01d1f" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_II_DisplayName">Source Infused - II</content>
+	<content contentuid="h32d5789fg31ffg4750g80b7g9a796de9ef2a" Source="Status_HEAL_DisplayName.lsb" Key="S7_ChannelSource_GAINED_SOURCE_III_DisplayName">Source Infused - III</content>
 	<content contentuid="h85910390g7a62g4265g8820g8d6b8da768f4" Source="Target_Description.lsb" Key="Target_S7_CS_SiphonSource_I_Description">Transfer &lt;font color=&apos;#008080&apos;&gt;Source&lt;/font&gt; to the desired target.</content>
-	<content contentuid="h11948793gedd4g479dg9987g953b2ce7834b" Source="Target_Description.lsb" Key="Target_SiphonSource_I_Description">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
 	<content contentuid="h9e08ab3fg407ag4a2cgbd2bg5543c13430f1" Source="Target_DisplayName.lsb" Key="Target_S7_CS_SiphonSource_I_DisplayName">Siphon Source</content>
-	<content contentuid="ha0fe3d28gd9fdg4589g8dd8g145332cc874a" Source="Target_DisplayName.lsb" Key="Target_SiphonSource_I_DisplayName">[Old] Siphon Source</content>
 	<content contentuid="ha9193ff1ge902g4b26g9df1gd5201d4b964a" Source="Target_StatsDescription.lsb" Key="Target_S7_CS_SiphonSource_I_StatsDescription">Transfer 1 Source-Point.</content>
-	<content contentuid="h9948058bg3730g41c9g89cegadd5aaea1cc0" Source="Target_StatsDescription.lsb" Key="Target_SiphonSource_I_StatsDescription">This skill is outdated. Use CleanUp diagnostics option from the mod-menu.</content>
 </contentList>
