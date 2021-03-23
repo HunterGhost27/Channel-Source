@@ -10,7 +10,7 @@ Ext.RegisterListener('SessionLoaded', function() -- UCL has been loaded by this 
 
     for stat, template in pairs(ChannelSourceSkillbooks) do
         -- Register Context-Menu label to CS Skillbooks
-        UCL.ContextMenu:QuickRegister({
+        UCL.ContextMenu:Register({
             ["RootTemplate::" .. template] = {
                 {
                     ['actionID'] = 27201,
