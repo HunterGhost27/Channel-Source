@@ -49,7 +49,7 @@ jobs:
           file: "README.md"
 
           # Target directory
-          outDir: "Documentation"
+          target: "Documentation/README.txt"
 
         # Environment Variables
         # ---------------------
